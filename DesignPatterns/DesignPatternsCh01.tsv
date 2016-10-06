@@ -95,6 +95,38 @@ Overview Design Pattern Relationships: State uses {{c1::Flyweight}} and is used 
 Overview Design Pattern Relationships: Strategy uses {{c1::Decorator, Flyweight}} and is used by {{c1::Decorator, Template Method}}
 Overview Design Pattern Relationships: Template Method uses {{c1::Factory Method, Strategy}} and is used by {{c1::[none]}}
 Overview Design Pattern Relationships: Visitor uses {{c1::Iterator}} and is used by {{c1::Interpreter, Composite}}
+What is my pnemonic for the eight common causes of redesign? {{c1::1. C third letter, 2. 3. and 4. 3-way dependenC, 5. and 6. Trisha vs Martin, 7. and 8. classy children and orphans}}
+C third letter means {{c1::1. creating an object by specifying a class explicitly}}
+3-way dependenC means {{c1::2. dependence on specific operations, 3. dependence on hardware and software platforms, 4. dependence on object representations or implementations}}
+Trisha vs Martin means {{c1::5. algorithmic dependencies and 6. tight coupling}}
+classy children and orphans means {{c1::7. extending functionality by subclassing and 8. inability to alter classes conveniently}}
+How do common causes for redesign {{c1::2. dependence on specific operations}} and {{c1::5. algorithmic dependencies}} differ?  {{c2::the former is ensuring how it gets done doesn't matter, it's up to the team to determine how and when; the latter is about the dialog with business analysts and safeguarding against future change in the way the software should work}}
+How do common causes for redesign {{c1::3. dependence on hardware/software platform}} and {{c1::4. Dependence on object representations or implementations}} differ?  {{c2::the former is a subset of the latter in a way: the APIs of hardware/software are an abstraction on which to avoid depending, implemented as interfaces, whereas the latter are an abstraction on which to avoid depending, implemented as concretions, including the concretion of where they are located. The addressing patterns adhere to this subset relationship.}}
+The Structurals go A B C D F F P; {{c1::3. dependence on hardware/software platform and 4. dependence on object representation or implementation::what pair of common causes for redesign?}} have addressing patterns {{c2::A B: Abstract Factory (creational), Bridge (structural)}}, these {{c2::being the entirety of the 1-1-0 of the former and the first half of 1-2-1 of the latter::accounting for the purpose counts how?}}.
+How to form 4. Dependence on object representation/implementation's set of addressing patterns? {{c1::add to its subset 3. Dependence on hardware/software platform's two patterns its own two exclusives: Proxy and Memento.}}
+How do common causes for redesign {{c1::5. algorithmic dependencies}} and {{c1::6. tight coupling}} differ? {{c2::the former is about working with Trisha with stuff in the flowchart, to account for its needing change or augmentation; the latter was about clean code -- keeping arity low and fields of a class used by most of its methods.}}
+{{c1::2. dependence on specific operations}} is easy: {{c2::0-0-2::what purpose counts?}} with {{c2::the 2 being the very first two behavioral patterns::what pnemonic?}}
+Template Method explains the rest of 5. Algorithmic Dependencies' addressing patterns: {{c2::all three of the final patterns are included: Strategy, Template Method, and Visitor.}}
+Form {{c1::6. Tight coupling::cause of redesign}}'s addressing patterns by {{c2::taking the union of 2. dependence on specific operations and 3. dependence on hardware/software platforms, add its exclusives Facade and Mediator, as well as Observer, shared with 7. extending functionality by subclassing.}}
+{{c1::7. Extending functionality by subclassing}} is the one cause for redesign in which {{c2::bridge}} appears but {{c2::abstract factory}} does not, related to the subset relationship of 3., 4., and 6.
+{{c1::7. Extending functionality by subclassing}} is the one cause for redesign in which {{c2::Chain of Responsibility}} appears but {{c2::Command}} does not, related to the subset relationship of 2. and 6.
+Among the last three patterns, {{c1::5. Algorithmic dependencies::cause for redesign}} gets {{c2::them all with Template Method exclusive::pattern(s?)}}, {{c1::7. Extending functionality by subclassing::cause for redesign}} gets {{c2::Strategy::pattern(s)?}} and {{c2::8. Inability to alter classes conveniently::cause for redesign}} gets {{c2::Visitor::pattern(s)?}}
+Form {{c1::7. Extending functionality by subclassing}} by {{c2::thumb nose at bridge and chain of responsibility, grab Composite, dance with 8./Decorator, 6./Observer, 5./Strategy}}
+{{c1::8. Inability to alter classes conveniently}} was already danced with by {{c2::7.Extending functionality by subclassing}} via Decorator; it has its exclusive Adapter, and the tussle with 5. and 7. over the last three got it Visitor.
+{{c1::Singleton| Flyweight| Interpreter, and State}} are the {{c2::four patterns not referenced in address to common causes for redesign}}.
+{{c1::Factory Method, Prototype| Proxy| Memento}} are the {{c2::four patterns that address only a single common cause for redesign, and it is among 1. - 4.}}
+{{c1::|Adapter, Composite, Facade, Proxy|}} are the {{c2::four structural patterns that address only a single common cause for redesign, and it is among 5. - 8.}}
+{{c1::Builder||Iterator, Mediator}} are the {{c2::three nonstructural patterns that address only a single cause for redesign, and it is among 5. - 8.}}
+{{c1::Factory Method, Prototype::pattern(s)}} can be applied in response ONLY to {{c2::1. Creating an object by specifying the class explicitly::cause for redesign}}
+{{c1::Proxy and Memento::pattern(s)}} can be applied in response ONLY to {{c2::4. Dependence on object representations/implementations::cause for redesign}}
+{{c1::Builder, Iterator, Template Method::pattern(s)}} can be applied in response ONLY to {{c2::5. Algorithmic dependencies::cause for redesign}}
+{{c1::Facade and Mediator::pattern(s)}} can be applied in response ONLY to {{c2::6. Tight coupling.::cause for redesign}}
+{{c1::Composite::pattern(s)}} can be applied in response ONLY to {{c2::7. Extending functionality by subclassing::cause for redesign}}
+{{c1::Adapter::pattern(s)}} can be applied in response ONLY to {{c2::8. Inability to alter classes conveniently::cause for redesign}}
+{{c1::|Decorator|Command, Observer, Strategy, Visitor::pattern(s)}} can be applied in response to {{c2::two::how many?}} causes for redesign.
+{{c1::|Chain of Responsibility|::pattern(s)?}} can be applied in response to {{c2::three::how many?}} causes for redesign.
+{{c1::Abstract Factory|Bridge|::pattern(s)?}} can be applied in response to {{c2::four::how many?}} causes for redesign.
+When {{c1::2. Dependence on specific operations}} unions with {{c1::4. Dependence on object representations/implementations}} to form {{c2::6. Tight Coupling}}, the union fails near the end of the operation.  {{c1::4}}.'s two non-{{c1::3}}. members mutate: Among {{c3::structurals::purpose?}}, {{c1::4}}.'s {{c3::Proxy::pattern(s)}} becomes {{c2::6}}.'s {{c3::Facade/exclusive::pattern(s) and sharing(s)}}, and among {{c3::behaviorals::purpose?}}, {{c1::4}}.'s {{c3::Memento::pattern(s)}} becomes {{c3::Mediator/exclusive and Observer/shared with 7.::pattern(s) and sharing(s)}}.
 True/false: the Builder pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
 True/false: the Iterator pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
 True/false: the Proxy pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
