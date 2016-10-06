@@ -1,0 +1,17 @@
+A name should tell you {{c1::why it exists}}, {{c1::what it does}}, and {{c1::how it is used}}.
+Beware of using names which {{c1::vary in small ways}}.
+When naming, avoid words {{c1::whose entrenched meanings vary from our intended meaning}}.
+It is very helpful if names for very similar things {{c1::sort together alphabetically}}, and if {{c1::differences are very obvious}}.
+If names must be different, they should {{c1::mean something different}}.
+Number-series naming is {{c1::the opposite of intentional naming}}.
+Noise words in naming: {{c1::a, an, the, info, data, type names in their own unambiguous context: variable, table, string, object}}.  Don't use them (unless they *do* somehow make a meaningful distinction).
+Distinguish names in such a way that {{c1::the reader knows what the differences offer}}.
+Make your names 1) {{c1::pronounceable}}, 2) {{c1::searchable}}, and free from 1) {{c1::type-encodings}}, and 2) {{c1::scope-encodings}}.
+The length of a name should correspond to {{c1::the size of its scope}}.
+When two names must differ only slightly for interface and implementation, prefer keeping intact the {{c1::interface}} name and varying the {{c2::implementation}} name.
+When brainstorming new terms for naming, try for terms from {{c1::the problem domain}} and {{c1::the solution domain}}.
+{{c2::Class names}} should be {{c1::nouns or noun phrases}}, not {{c1::verbs nor verb phrases}}.
+Avoid additional noise words in {{c2::class}} names: {{c1::manager, processor}}.
+Method names should be {{c1::verbs or verb phrases}}, not {{c1::nouns or noun phrases}}.
+When naming, pick {{c1::one word}} for one abstract concept, and {{c1::stick with it}}.
+When naming, add {{c1::meaningful}} but not {{c1::gratuitous}} context.

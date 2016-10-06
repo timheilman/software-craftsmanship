@@ -1,0 +1,2 @@
+Good comments: legal, informative, intent, clarification, warning of consequences, todos, amplification, Javadocs in Public APIs
+Bad comments: mumbling, redundant, misleading, mandated, journal, noise, what could be function or variable names, position markers, closing brace comments, attributions and bylines, commented-out code, html comments, nonlocal information, too much information, inobvious connection, function headers, javadocs in nonpublic code
