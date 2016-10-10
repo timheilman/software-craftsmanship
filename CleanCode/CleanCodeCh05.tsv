@@ -1,0 +1,11 @@
+{{c1::Coding style and readability}} set precedents that continue to affect {{c2::maintainability and extensibility}} long after the original code ha been changed beyond recognition.
+Systems on the order of {{c1::50,000}} lines have been built out of files that are typically {{{c2::200}} lines long, with an upper limit of {{c2::500}} lines.
+Code should read most like {{c1::the inverted triangle technique from newspapers::a style of organic language writing}}.
+Use newlines when {{c1::you want to separate concepts}}, not when {{c1::you want to associate closely related code}}
+In a well-designed class instance variables are used by {{c1::many if not all::how many?}} of the methods of the class, thus they should be declared {{c1::at the top of the class::where?}}.
+Stack variables should be declared {{c1::as close to their usage as possible::where?}}.
+If one function calls another, they should be {{c1::vertically close::where?}}, and the caller should be {{c1::above the callee}}, if at all possible. 
+In general we want function call dependencies to point in the {{c1::downward}} direction.
+Horizontal formatting: no lines longer than {{c1::100 or 120}} characters.
+Horizontal alignment: if I have long lists that need to be aligned, the problem is {{c1::the length of the lists}}, not {{c1::the lack of alignment}}.
+Every programmer has his own favorite formatting rules, but if he {{c1::works in a team}}, then {{c1::the team rules}}.
