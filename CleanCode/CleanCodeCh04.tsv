@@ -1,2 +1,20 @@
-Good comments: legal, informative, intent, clarification, warning of consequences, todos, amplification, Javadocs in Public APIs
-Bad comments: mumbling, redundant, misleading, mandated, journal, noise, what could be function or variable names, position markers, closing brace comments, attributions and bylines, commented-out code, html comments, nonlocal information, too much information, inobvious connection, function headers, javadocs in nonpublic code
+Comments are, at best, a/an {{c1::necessary evil}}.
+Good comments: {{c1::legal}}, {{c1::informative}}, {{c1::intent}}, {{c2::clarification}}, {{c2::warning of consequences}}, {{c2::todos}}, {{c3::amplification}}, {{c3::Javadocs in Public APIs}}
+{{c1::Legal}} comments: {{c2::have your IDE hide them}}
+{{c1::Informative}} comments: {{c2::try to rename the function; if can't, move to another class & rename; if can't, OK}}
+{{c1::Intent}} comments: {{c2::decision may have been right or wrong, but best to tell Fut why decision made so}}
+{{c1::Clarification}} comments: {{c2::only OK when in code you cannot alter}}
+{{c1::Warning of Consequences}} comments: {{c2::be as safe as you can w/OO princps, but better //WARNING than nothing}}
+{{c1::TODO}} comments: {{c2::NOT an excuse to leave bad code in the system}}
+{{c1::Amplification}} comments: {{c2::subtext of Warning of Consequences; explaining neccessary code}}
+{{c1::JavaDocs in Public APIs}} comments: {{c2::good}}
+{{c1::JavaDocs in non-Public APIs}} comments: {{c2::bad}}
+Any comment that {{c1::forces you to look in another module for the meaning of that comment}} has failed to communicate to you and is not worth the bits it consumes.
+{{c1::Banner}} comments: {{c2::use almost never: very sparingly and only when benefit is significant, lest they become noise}}
+{{c1::Closing brace}} comments: {{c2::NO. use shorter functions.}}
+{{c1::Commented-out code}} comments: {{c2::NO. use version control.}}
+{{c1::HTML}} comments: {{c2::NO. delegate to a tool to transform, like Javadoc.}}
+{{c1::Nonlocal information}} comments: {{c2::NO. even if useful, too likely to rot.}}
+{{c1::Inobvious connection}} comments: {{c2::NO. Pity when a comment needs its own explanation.}}
+{{c1::Misleading}} comments: {{c2::NO. Do everything in code you can to avoid accidents.}}
+
