@@ -1,351 +1,351 @@
-The Creational Patterns are {{c1::Abstract Factory}}, {{c1::Builder}}, {{c1::Factory Method}}, {{c2::Prototype}}, and {{c2::Singleton}}.
-The Structural Patterns are {{c1::Adapter}}, {{c1::Bridge}}, {{c1::Composite}}, {{c2::Decorator}}, {{c2::Facade}}, {{c2::Flyweight}}, and {{c2::Proxy}}.
-The Behavioral Patterns are {{c1::Chain of Responsibility}}, {{c1::Command}}, {{c1::Interpreter}}, {{c2::Iterator}}, {{c2::Mediator}}, {{c2::Memento}}, {{c3::Observer}}, {{c3::State}}, {{c3::Strategy}}, {{c4::Template Method}}, and {{c4::Visitor}}.
-In the MVC triad, the relationship between the {{c1::model}} and the {{c1::view(s)}} is an example of the more general {{c2::Observer}} pattern.
-In the MVC triad, the relationship between the {{c1::views}} and the {{c1::nested views of those views}} is an example of the more general {{c2::Composite}} pattern.
-In the MVC triad, the relationship between the {{c1::view}} and the {{c1::controller(s)}} is an example of the more general {{c2::Strategy}} pattern.
-Each pattern consists of: {{c1::Pattern Name and Classification}}, {{c1::Intent}}, {{c1::Also Known As}}, {{c2::Motivation}}, {{c2::Applicability}}, {{c2::Structure}}, {{c3::Participants}}, {{c3::Collaborations}}, {{c3::Consequences}}, {{c4::Implementation}}, {{c4::Sample Code}}, {{c4::Known Uses}}, {{c4::Related Patterns}}
-Pattern name: {{c1::Abstract Factory}} Intent: {{c2::Provide an interface for creating families of related or dependent objects without specifying their concrete classes.}}
-Pattern name: {{c1::Builder}} Intent: {{c2::Separate the construction of a complex object from its representation so that the same construction process can create different representations.}}
-Pattern name: {{c1::Factory Method}} Intent: {{c2::Define an interface for creating an object, but let subclasses decide which class to instantiate.  This pattern lets a class defer instantiation to subclasses.}}
-Pattern name: {{c1::Prototype}} Intent: {{c2::Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.}}
-Pattern name: {{c1::Singleton}} Intent: {{c2::Ensure a class only has one instance, and provide a global point of access to it.}}
-Pattern name: {{c1::Adapter}} Intent: {{c2::Convert the interface of a class into another interface clients expect. This pattern lets classes work together that couldn't otherwise because of incompatible interfaces.}}
-Pattern name: {{c1::Bridge}} Intent: {{c2::Decouple an abstraction from its implementation so that the two can vary independently}}
-Pattern name: {{c1::Composite}} Intent: {{c2::Compose objects into tree structures to represent part-whole hierarchies. This pattern lets clients treat individual objects and compositions of objects uniformly.}}
-Pattern name: {{c1::Decorator}} Intent: {{c2::Attach additional responsibilities to an object dynamically. This pattern provides a flexible alternative to subclassing for extending functionality.}}
-Pattern name: {{c1::Facade}} Intent: {{c2::Provide a unified interface to a set of interfaces in a subsystem. This pattern defines a higher-level interface that makes the subsystem easier to use.}}
-Pattern name: {{c1::Flyweight}} Intent: {{c2::Use sharing to support large numbers of fine-grained objects efficiently.}}
-Pattern name: {{c1::Proxy}} Intent: {{c2::Provide a surrogate or placeholder for another object to control access to it.}}
-Pattern name: {{c1::Chain of Responsibility}} Intent: {{c2::Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.}}
-Pattern name: {{c1::Command}} Intent: {{c2::Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.}}
-Pattern name: {{c1::Interpreter}} Intent: {{c2::Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.}}
-Pattern name: {{c1::Mediator}} Intent: {{c2::Define an object that encapsulates how a set of objects interact. This pattern promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.}}
-Pattern name: {{c1::Memento}} Intent: {{c2::Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.}}
-Pattern name: {{c1::Observer}} Intent: {{c2::Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.}}
-Pattern name: {{c1::State}} Intent: {{c2::Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.}}
-Pattern name: {{c1::Strategy}} Intent: {{c2::Define a family of algorithms, encapsulate each one, and make them interchangeable. This pattern lets the algorithm vay independently from clients that use it.}}
-Pattern name: {{c1::Template Method}} Intent: {{c2::Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. This pattern lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.}}
-Pattern name: {{c1::Visitor}} Intent: {{c2::Represent an operation to be performed on the elements of an object structure. This pattern lets you define a new operation without changing the classes of the elements on which it operates.}}
-A {{c1::scope and purpose}} is called a {{c2::classification}}.
-Abstract Factory is of classification {{c1::object creational}}.
-Builder is of classification {{c1::object creational}}.
-Factory Method is of classification {{c1::class creational}}.
-Prototype is of classification {{c1::object creational}}.
-Singleton is of classification {{c1::object creational}}.
-Adapter is of classification {{c1::class or object structural}}.
-Bridge is of classification {{c1::object structural}}.
-Composite is of classification {{c1::object structural}}.
-Decorator is of classification {{c1::object structural}}.
-Facade is of classification {{c1::object structural}}.
-Flyweight is of classification {{c1::object structural}}.
-Proxy is of classification {{c1::object structural}}.
-Chain of Responsibility is of classification {{c1::object behavioral}}.
-Command is of classification {{c1::object behavioral}}.
-Interpreter is of classification {{c1::class behavioral}}.
-Iterator is of classification {{c1::object behavioral}}.
-Mediator is of classification {{c1::object behavioral}}.
-Memento is of classification {{c1::object behavioral}}.
-Observer is of classification {{c1::object behavioral}}.
-State is of classification {{c1::object behavioral}}.
-Strategy is of classification {{c1::object behavioral}}.
-Template Method is of classification {{c1::class behavioral}}.
-Visitor is of classification {{c1::object behavioral}}.
-Overview Design Pattern Relationships: {{c1::Interpreter or Composite}} -- {{c2::adding operations}} --> {{c1::Visitor}}
-Overview Design Pattern Relationships: {{c1::Decorator or Strategy}} -- {{c2::changing skin versus guts}} --> {{c1::Strategy or Decorator}}
-Overview Design Pattern Relationships: {{c1::Abstract Factory or Facade}} -- {{c2::single instance}} --> {{c1::Singleton}}
-Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::adding responsibilities to objects}} --> {{c1::Decorator}}
-Overview Design Pattern Relationships: {{c1::Command}} -- {{c2::avoiding hysteresis}} --> {{c1::Memento}}
-Overview Design Pattern Relationships: {{c1::Observer}} -- {{c2::complex dependency management}} --> {{c1::Mediator}}
-Overview Design Pattern Relationships: {{c1::Command}} -- {{c2::composed using}} --> {{c1::Composite}}
-Overview Design Pattern Relationships: {{c1::Abstract Factory}} -- {{c2::configure factory dynamically}} --> {{c1::Prototype}}
-Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::creating composites}} --> {{c1::Builder}}
-Overview Design Pattern Relationships: {{c1::Template Method}} -- {{c2::defining algorithm's steps}} --> {{c1::Strategy}}
-Overview Design Pattern Relationships: {{c1::Interpreter}} -- {{c2::defining grammar}} --> {{c1::Composite}}
-Overview Design Pattern Relationships: {{c1::Chain of Responsibility}} -- {{c2::defining the chain}} --> {{c1::Composite}}
-Overview Design Pattern Relationships: {{c1::Visitor}} -- {{c2::defining traversals}} --> {{c1::Iterator}}
-Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::enumerating children}} --> {{c1::Iterator}}
-Overview Design Pattern Relationships: {{c1::Abstract Factory}} -- {{c2::implement using}} --> {{c1::Factory Method}}
-Overview Design Pattern Relationships: {{c1::Template Method}} -- {{c2::often uses}} --> {{c1::Factory Method}}
-Overview Design Pattern Relationships: {{c1::Iterator}} -- {{c2::saving state of iteration}} --> {{c1::Memento}}
-Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::sharing composites}} --> {{c1::Flyweight}}
-Overview Design Pattern Relationships: {{c1::State}} -- {{c2::sharing states}} --> {{c1::Flyweight}}
-Overview Design Pattern Relationships: {{c1::Strategy}} -- {{c2::sharing strategies}} --> {{c1::Flyweight}}
-Overview Design Pattern Relationships: {{c1::Interpreter}} -- {{c2::sharing terminal symbols}} --> {{c1::Flyweight}}
-Overview Design Pattern Relationships: Abstract Factory uses {{c1::Prototype,Singleton, Factory Method}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Builder uses {{c1::[none]}} and is used by {{c1::Composite}}
-Overview Design Pattern Relationships: Factory Method uses {{c1::[none]}} and is used by {{c1::Template Method, Abstract Factory}}
-Overview Design Pattern Relationships: Prototype uses {{c1::[none]}} and is used by {{c1::Abstract Factory}}
-Overview Design Pattern Relationships: Singleton uses {{c1::[none]}} and is used by {{c1::Abstract Factory, Facade}}
-Overview Design Pattern Relationships: Adapter uses {{c1::[none]}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Bridge uses {{c1::[none]}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Composite uses {{c1::Builder,Decorator,Flyweight,Iterator,Visitor}} and is used by {{c1::Chain of Responsibility,Command,Interpreter}}
-Overview Design Pattern Relationships: Decorator uses {{c1::Strategy}} and is used by {{c1::Composite, Strategy}}
-Overview Design Pattern Relationships: Facade uses {{c1::Singleton}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Flyweight uses {{c1::[none]}} and is used by {{c1::Composite, Interpreter, State, Strategy}}
-Overview Design Pattern Relationships: Proxy uses {{c1::[none]}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Chain of Responsibility uses {{c1::Composite}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Command uses {{c1::Memento, Composite}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Interpreter uses {{c1::Composite, Flyweight, Visitor}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Iterator uses {{c1::Memento}} and is used by {{c1::Composite, Visitor}}
-Overview Design Pattern Relationships: Mediator uses {{c1::[none]}} and is used by {{c1::Observer}}
-Overview Design Pattern Relationships: Memento uses {{c1::[none]}} and is used by {{c1::Iterator, Command}}
-Overview Design Pattern Relationships: Observer uses {{c1::Mediator}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: State uses {{c1::Flyweight}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Strategy uses {{c1::Decorator, Flyweight}} and is used by {{c1::Decorator, Template Method}}
-Overview Design Pattern Relationships: Template Method uses {{c1::Factory Method, Strategy}} and is used by {{c1::[none]}}
-Overview Design Pattern Relationships: Visitor uses {{c1::Iterator}} and is used by {{c1::Interpreter, Composite}}
-What is my pnemonic for the eight common causes of redesign? {{c1::1. C third letter, 2. 3. and 4. 3-way dependenC, 5. and 6. Trisha vs Martin, 7. and 8. classy children and orphans}}
-C third letter means {{c1::1. creating an object by specifying a class explicitly}}
-3-way dependenC means {{c1::2. dependence on specific operations, 3. dependence on hardware and software platforms, 4. dependence on object representations or implementations}}
-Trisha vs Martin means {{c1::5. algorithmic dependencies and 6. tight coupling}}
-classy children and orphans means {{c1::7. extending functionality by subclassing and 8. inability to alter classes conveniently}}
-How do common causes for redesign {{c1::2. dependence on specific operations}} and {{c1::5. algorithmic dependencies}} differ?  {{c2::the former is ensuring how it gets done doesn't matter, it's up to the team to determine how and when; the latter is about the dialog with business analysts and safeguarding against future change in the way the software should work}}
-How do common causes for redesign {{c1::3. dependence on hardware/software platform}} and {{c1::4. Dependence on object representations or implementations}} differ?  {{c2::the former is a subset of the latter in a way: the APIs of hardware/software are an abstraction on which to avoid depending, implemented as interfaces, whereas the latter are an abstraction on which to avoid depending, implemented as concretions, including the concretion of where they are located. The addressing patterns adhere to this subset relationship.}}
-The Structurals go A B C D F F P; {{c1::3. dependence on hardware/software platform and 4. dependence on object representation or implementation::what pair of common causes for redesign?}} have addressing patterns {{c2::A B: Abstract Factory (creational), Bridge (structural)}}, these {{c2::being the entirety of the 1-1-0 of the former and the first half of 1-2-1 of the latter::accounting for the purpose counts how?}}.
-How to form 4. Dependence on object representation/implementation's set of addressing patterns? {{c1::add to its subset 3. Dependence on hardware/software platform's two patterns its own two exclusives: Proxy and Memento.}}
-How do common causes for redesign {{c1::5. algorithmic dependencies}} and {{c1::6. tight coupling}} differ? {{c2::the former is about working with Trisha with stuff in the flowchart, to account for its needing change or augmentation; the latter was about clean code -- keeping arity low and fields of a class used by most of its methods.}}
-{{c1::2. dependence on specific operations}} is easy: {{c2::0-0-2::what purpose counts?}} with {{c2::the 2 being the very first two behavioral patterns::what pnemonic?}}
-Template Method explains the rest of 5. Algorithmic Dependencies' addressing patterns: {{c2::all three of the final patterns are included: Strategy, Template Method, and Visitor.}}
-Form {{c1::6. Tight coupling::cause of redesign}}'s addressing patterns by {{c2::taking the union of 2. dependence on specific operations and 3. dependence on hardware/software platforms, add its exclusives Facade and Mediator, as well as Observer, shared with 7. extending functionality by subclassing.}}
-{{c1::7. Extending functionality by subclassing}} is the one cause for redesign in which {{c2::bridge}} appears but {{c2::abstract factory}} does not, related to the subset relationship of 3., 4., and 6.
-{{c1::7. Extending functionality by subclassing}} is the one cause for redesign in which {{c2::Chain of Responsibility}} appears but {{c2::Command}} does not, related to the subset relationship of 2. and 6.
-Among the last three patterns, {{c1::5. Algorithmic dependencies::cause for redesign}} gets {{c2::them all with Template Method exclusive::pattern(s?)}}, {{c1::7. Extending functionality by subclassing::cause for redesign}} gets {{c2::Strategy::pattern(s)?}} and {{c2::8. Inability to alter classes conveniently::cause for redesign}} gets {{c2::Visitor::pattern(s)?}}
-Form {{c1::7. Extending functionality by subclassing}} by {{c2::thumb nose at bridge and chain of responsibility, grab Composite, dance with 8./Decorator, 6./Observer, 5./Strategy}}
-{{c1::8. Inability to alter classes conveniently}} was already danced with by {{c2::7.Extending functionality by subclassing}} via Decorator; it has its exclusive Adapter, and the tussle with 5. and 7. over the last three got it Visitor.
-{{c1::Singleton| Flyweight| Interpreter, and State}} are the {{c2::four patterns not referenced in address to common causes for redesign}}.
-{{c1::Factory Method, Prototype| Proxy| Memento}} are the {{c2::four patterns that address only a single common cause for redesign, and it is among 1. - 4.}}
-{{c1::|Adapter, Composite, Facade, Proxy|}} are the {{c2::four structural patterns that address only a single common cause for redesign, and it is among 5. - 8.}}
-{{c1::Builder||Iterator, Mediator}} are the {{c2::three nonstructural patterns that address only a single cause for redesign, and it is among 5. - 8.}}
-{{c1::Factory Method, Prototype::pattern(s)}} can be applied in response ONLY to {{c2::1. Creating an object by specifying the class explicitly::cause for redesign}}
-{{c1::Proxy and Memento::pattern(s)}} can be applied in response ONLY to {{c2::4. Dependence on object representations/implementations::cause for redesign}}
-{{c1::Builder, Iterator, Template Method::pattern(s)}} can be applied in response ONLY to {{c2::5. Algorithmic dependencies::cause for redesign}}
-{{c1::Facade and Mediator::pattern(s)}} can be applied in response ONLY to {{c2::6. Tight coupling.::cause for redesign}}
-{{c1::Composite::pattern(s)}} can be applied in response ONLY to {{c2::7. Extending functionality by subclassing::cause for redesign}}
-{{c1::Adapter::pattern(s)}} can be applied in response ONLY to {{c2::8. Inability to alter classes conveniently::cause for redesign}}
-{{c1::|Decorator|Command, Observer, Strategy, Visitor::pattern(s)}} can be applied in response to {{c2::two::how many?}} causes for redesign.
-{{c1::|Chain of Responsibility|::pattern(s)?}} can be applied in response to {{c2::three::how many?}} causes for redesign.
-{{c1::Abstract Factory|Bridge|::pattern(s)?}} can be applied in response to {{c2::four::how many?}} causes for redesign.
-When {{c1::2. Dependence on specific operations}} unions with {{c1::4. Dependence on object representations/implementations}} to form {{c2::6. Tight Coupling}}, the union fails near the end of the operation.  {{c1::4}}.'s two non-{{c1::3}}. members mutate: Among {{c3::structurals::purpose?}}, {{c1::4}}.'s {{c3::Proxy::pattern(s)}} becomes {{c2::6}}.'s {{c3::Facade/exclusive::pattern(s) and sharing(s)}}, and among {{c3::behaviorals::purpose?}}, {{c1::4}}.'s {{c3::Memento::pattern(s)}} becomes {{c3::Mediator/exclusive and Observer/shared with 7.::pattern(s) and sharing(s)}}.
-True/false: the Builder pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::true}}
-True/false: the Command pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::true}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::true}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the State pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}
-True/false: the Builder pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Command pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::true}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::true}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the State pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}
-True/false: the Builder pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::true}}
-True/false: the Command pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::true}}
-True/false: the State pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}
-True/false: the Builder pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}
-True/false: the Command pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}
-True/false: the State pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}
-True/false: the Builder pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Command pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the State pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}
-True/false: the Builder pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}
-True/false: the Command pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}
-True/false: the State pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}
-True/false: the Builder pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Command pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}
-True/false: the State pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}
-True/false: the Builder pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Iterator pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Proxy pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Singleton pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Facade pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Command pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Flyweight pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Visitor pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::true}}
-True/false: the Observer pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Factory Method pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Composite pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Prototype pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Bridge pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the State pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Interpreter pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Template Method pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Mediator pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Adapter pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::true}}
-True/false: the Strategy pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-True/false: the Decorator pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::true}}
-True/false: the Memento pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}
-Common cause of redesign (refactor): {{c1::Creating an object by specifying a class explicitly}}. Addressing design patterns: {{c2::Abstract Factory, Factory Method, Prototype}}
-Common cause of redesign (refactor): {{c1::Dependence on specific operations}}. Addressing design patterns: {{c2::Chain of Responsibility, Command}}
-Common cause of redesign (refactor): {{c1::Dependence on hardware and software platform}}. Addressing design patterns: {{c2::Abstract Factory, Bridge}}
-Common cause of redesign (refactor): {{c1::Dependence on object representations or implementations}}. Addressing design patterns: {{c2::Abstract Factory, Bridge, Memento, Proxy}}
-Common cause of redesign (refactor): {{c1::Algorithmic dependencies}}. Addressing design patterns: {{c2::Builder, Iterator, Strategy, Template Method, Visitor}}
-Common cause of redesign (refactor): {{c1::Tight coupling}}. Addressing design patterns: {{c2::Abstract Factory, Bridge, Chain of Responsibility, Command, Facade, Mediator, Observer}}
-Common cause of redesign (refactor): {{c1::Extending functionality by subclassing}}. Addressing design patterns: {{c2::Bridge, Chain of Responsibility, Composite, Decorator, Observer, Strategy}}
-Common cause of redesign (refactor): {{c1::Inability to alter classes conveniently}}. Addressing design patterns: {{c2::Adapter, Decorator, Visitor}}
-Pattern name: {{c1::Abstract Factory}}; Aspect(s) that can vary: {{c2::families of product objects}}
-Pattern name: {{c1::Builder}}; Aspect(s) that can vary: {{c2::how a composite object gets created}}
-Pattern name: {{c1::Factory Method}}; Aspect(s) that can vary: {{c2::subclass of object that is instantiated}}
-Pattern name: {{c1::Prototype}}; Aspect(s) that can vary: {{c2::class of object that is instantiated}}
-Pattern name: {{c1::Singleton}}; Aspect(s) that can vary: {{c2::the sole instance of a class}}
-Pattern name: {{c1::Adapter}}; Aspect(s) that can vary: {{c2::interface to an object}}
-Pattern name: {{c1::Bridge}}; Aspect(s) that can vary: {{c2::implementation of an object}}
-Pattern name: {{c1::Composite}}; Aspect(s) that can vary: {{c2::structure and composition of an object}}
-Pattern name: {{c1::Decorator}}; Aspect(s) that can vary: {{c2::responsibilities of an object without subclassing}}
-Pattern name: {{c1::Facade}}; Aspect(s) that can vary: {{c2::interface to a subsystem}}
-Pattern name: {{c1::Flyweight}}; Aspect(s) that can vary: {{c2::storage costs of objects}}
-Pattern name: {{c1::Proxy}}; Aspect(s) that can vary: {{c2::how an object is accessed; its location}}
-Pattern name: {{c1::Chain of Responsibility}}; Aspect(s) that can vary: {{c2::object that can fulfill a request}}
-Pattern name: {{c1::Command}}; Aspect(s) that can vary: {{c2::when and how a request is fulfilled}}
-Pattern name: {{c1::Interpreter}}; Aspect(s) that can vary: {{c2::grammar and interpretation of a language}}
-Pattern name: {{c1::Iterator}}; Aspect(s) that can vary: {{c2::how an aggregate's elements are accessed, traversed}}
-Pattern name: {{c1::Mediator}}; Aspect(s) that can vary: {{c2::how and which objects interact with each other}}
-Pattern name: {{c1::Memento}}; Aspect(s) that can vary: {{c2::what private information is stored outside an object, and when}}
-Pattern name: {{c1::Observer}}; Aspect(s) that can vary: {{c2::number of objects that depend on another object; how the dependent objects stay up to date}}
-Pattern name: {{c1::State}}; Aspect(s) that can vary: {{c2::states of an object}}
-Pattern name: {{c1::Strategy}}; Aspect(s) that can vary: {{c2::an algorithm}}
-Pattern name: {{c1::Template Method}}; Aspect(s) that can vary: {{c2::steps of an algorithm}}
-Pattern name: {{c1::Visitor}}; Aspect(s) that can vary: {{c2::operations that can be applied to object(s) without changing their class(es)}}
-In "true" delegation, {{c1::the receiver}} always {{c1::passes itself to the delegate}}.
-The {{c1::State}} pattern {{c3::always::always/sometimes}} uses delegation by {{c2::delegating requests to a State object that represents its current state}}.
-The {{c1::Strategy}} pattern {{c3::always::always/sometimes}} uses true delegation by {{c2::delegating a specific request to an object that represents a strategy for carrying out the request}}.
-The {{c1::Visitor}} pattern {{c3::always::always/sometimes}} uses true delegation by {{c2::the operation that gets performed delegating to the object named the same as the pattern}}.
-The {{c1::Mediator}} pattern {{c3::sometimes::always/sometimes}} uses true delegation by {{c2::passing along a reference to itself}}.
-The {{c1::Chain of Responsibility}} pattern {{c3::sometimes::always/sometimes}} uses true delegation by {{c2::the request carrying with it a reference to the original object receiving the request}}.
-The {{c1::Bridge}} pattern {{c3::sometimes::always/sometimes}} uses true delegation by {{c2::the abstraction and implementation being closely matched, and the abstraction delegating operations to the implementation}}.
+The Creational Patterns are {{c1::Abstract Factory}}, {{c1::Builder}}, {{c1::Factory Method}}, {{c2::Prototype}}, and {{c2::Singleton}}.	DesignPatterns	1	
+The Structural Patterns are {{c1::Adapter}}, {{c1::Bridge}}, {{c1::Composite}}, {{c2::Decorator}}, {{c2::Facade}}, {{c2::Flyweight}}, and {{c2::Proxy}}.	DesignPatterns	1	
+The Behavioral Patterns are {{c1::Chain of Responsibility}}, {{c1::Command}}, {{c1::Interpreter}}, {{c2::Iterator}}, {{c2::Mediator}}, {{c2::Memento}}, {{c3::Observer}}, {{c3::State}}, {{c3::Strategy}}, {{c4::Template Method}}, and {{c4::Visitor}}.	DesignPatterns	1	
+In the MVC triad, the relationship between the {{c1::model}} and the {{c1::view(s)}} is an example of the more general {{c2::Observer}} pattern.	DesignPatterns	1	
+In the MVC triad, the relationship between the {{c1::views}} and the {{c1::nested views of those views}} is an example of the more general {{c2::Composite}} pattern.	DesignPatterns	1	
+In the MVC triad, the relationship between the {{c1::view}} and the {{c1::controller(s)}} is an example of the more general {{c2::Strategy}} pattern.	DesignPatterns	1	
+Each pattern consists of: {{c1::Pattern Name and Classification}}, {{c1::Intent}}, {{c1::Also Known As}}, {{c2::Motivation}}, {{c2::Applicability}}, {{c2::Structure}}, {{c3::Participants}}, {{c3::Collaborations}}, {{c3::Consequences}}, {{c4::Implementation}}, {{c4::Sample Code}}, {{c4::Known Uses}}, {{c4::Related Patterns}}	DesignPatterns	1	
+Pattern name: {{c1::Abstract Factory}} Intent: {{c2::Provide an interface for creating families of related or dependent objects without specifying their concrete classes.}}	DesignPatterns	1	
+Pattern name: {{c1::Builder}} Intent: {{c2::Separate the construction of a complex object from its representation so that the same construction process can create different representations.}}	DesignPatterns	1	
+Pattern name: {{c1::Factory Method}} Intent: {{c2::Define an interface for creating an object, but let subclasses decide which class to instantiate.  This pattern lets a class defer instantiation to subclasses.}}	DesignPatterns	1	
+Pattern name: {{c1::Prototype}} Intent: {{c2::Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.}}	DesignPatterns	1	
+Pattern name: {{c1::Singleton}} Intent: {{c2::Ensure a class only has one instance, and provide a global point of access to it.}}	DesignPatterns	1	
+Pattern name: {{c1::Adapter}} Intent: {{c2::Convert the interface of a class into another interface clients expect. This pattern lets classes work together that couldn't otherwise because of incompatible interfaces.}}	DesignPatterns	1	
+Pattern name: {{c1::Bridge}} Intent: {{c2::Decouple an abstraction from its implementation so that the two can vary independently}}	DesignPatterns	1	
+Pattern name: {{c1::Composite}} Intent: {{c2::Compose objects into tree structures to represent part-whole hierarchies. This pattern lets clients treat individual objects and compositions of objects uniformly.}}	DesignPatterns	1	
+Pattern name: {{c1::Decorator}} Intent: {{c2::Attach additional responsibilities to an object dynamically. This pattern provides a flexible alternative to subclassing for extending functionality.}}	DesignPatterns	1	
+Pattern name: {{c1::Facade}} Intent: {{c2::Provide a unified interface to a set of interfaces in a subsystem. This pattern defines a higher-level interface that makes the subsystem easier to use.}}	DesignPatterns	1	
+Pattern name: {{c1::Flyweight}} Intent: {{c2::Use sharing to support large numbers of fine-grained objects efficiently.}}	DesignPatterns	1	
+Pattern name: {{c1::Proxy}} Intent: {{c2::Provide a surrogate or placeholder for another object to control access to it.}}	DesignPatterns	1	
+Pattern name: {{c1::Chain of Responsibility}} Intent: {{c2::Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.}}	DesignPatterns	1	
+Pattern name: {{c1::Command}} Intent: {{c2::Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.}}	DesignPatterns	1	
+Pattern name: {{c1::Interpreter}} Intent: {{c2::Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.}}	DesignPatterns	1	
+Pattern name: {{c1::Mediator}} Intent: {{c2::Define an object that encapsulates how a set of objects interact. This pattern promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.}}	DesignPatterns	1	
+Pattern name: {{c1::Memento}} Intent: {{c2::Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.}}	DesignPatterns	1	
+Pattern name: {{c1::Observer}} Intent: {{c2::Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.}}	DesignPatterns	1	
+Pattern name: {{c1::State}} Intent: {{c2::Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.}}	DesignPatterns	1	
+Pattern name: {{c1::Strategy}} Intent: {{c2::Define a family of algorithms, encapsulate each one, and make them interchangeable. This pattern lets the algorithm vay independently from clients that use it.}}	DesignPatterns	1	
+Pattern name: {{c1::Template Method}} Intent: {{c2::Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. This pattern lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.}}	DesignPatterns	1	
+Pattern name: {{c1::Visitor}} Intent: {{c2::Represent an operation to be performed on the elements of an object structure. This pattern lets you define a new operation without changing the classes of the elements on which it operates.}}	DesignPatterns	1	
+A {{c1::scope and purpose}} is called a {{c2::classification}}.	DesignPatterns	1	
+Abstract Factory is of classification {{c1::object creational}}.	DesignPatterns	1	
+Builder is of classification {{c1::object creational}}.	DesignPatterns	1	
+Factory Method is of classification {{c1::class creational}}.	DesignPatterns	1	
+Prototype is of classification {{c1::object creational}}.	DesignPatterns	1	
+Singleton is of classification {{c1::object creational}}.	DesignPatterns	1	
+Adapter is of classification {{c1::class or object structural}}.	DesignPatterns	1	
+Bridge is of classification {{c1::object structural}}.	DesignPatterns	1	
+Composite is of classification {{c1::object structural}}.	DesignPatterns	1	
+Decorator is of classification {{c1::object structural}}.	DesignPatterns	1	
+Facade is of classification {{c1::object structural}}.	DesignPatterns	1	
+Flyweight is of classification {{c1::object structural}}.	DesignPatterns	1	
+Proxy is of classification {{c1::object structural}}.	DesignPatterns	1	
+Chain of Responsibility is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Command is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Interpreter is of classification {{c1::class behavioral}}.	DesignPatterns	1	
+Iterator is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Mediator is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Memento is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Observer is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+State is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Strategy is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Template Method is of classification {{c1::class behavioral}}.	DesignPatterns	1	
+Visitor is of classification {{c1::object behavioral}}.	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Interpreter or Composite}} -- {{c2::adding operations}} --&gt; {{c1::Visitor}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Decorator or Strategy}} -- {{c2::changing skin versus guts}} --&gt; {{c1::Strategy or Decorator}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Abstract Factory or Facade}} -- {{c2::single instance}} --&gt; {{c1::Singleton}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::adding responsibilities to objects}} --&gt; {{c1::Decorator}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Command}} -- {{c2::avoiding hysteresis}} --&gt; {{c1::Memento}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Observer}} -- {{c2::complex dependency management}} --&gt; {{c1::Mediator}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Command}} -- {{c2::composed using}} --&gt; {{c1::Composite}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Abstract Factory}} -- {{c2::configure factory dynamically}} --&gt; {{c1::Prototype}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::creating composites}} --&gt; {{c1::Builder}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Template Method}} -- {{c2::defining algorithm's steps}} --&gt; {{c1::Strategy}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Interpreter}} -- {{c2::defining grammar}} --&gt; {{c1::Composite}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Chain of Responsibility}} -- {{c2::defining the chain}} --&gt; {{c1::Composite}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Visitor}} -- {{c2::defining traversals}} --&gt; {{c1::Iterator}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::enumerating children}} --&gt; {{c1::Iterator}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Abstract Factory}} -- {{c2::implement using}} --&gt; {{c1::Factory Method}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Template Method}} -- {{c2::often uses}} --&gt; {{c1::Factory Method}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Iterator}} -- {{c2::saving state of iteration}} --&gt; {{c1::Memento}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Composite}} -- {{c2::sharing composites}} --&gt; {{c1::Flyweight}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::State}} -- {{c2::sharing states}} --&gt; {{c1::Flyweight}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Strategy}} -- {{c2::sharing strategies}} --&gt; {{c1::Flyweight}}	DesignPatterns	1	
+Overview Design Pattern Relationships: {{c1::Interpreter}} -- {{c2::sharing terminal symbols}} --&gt; {{c1::Flyweight}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Abstract Factory uses {{c1::Prototype,Singleton, Factory Method}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Builder uses {{c1::[none]}} and is used by {{c1::Composite}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Factory Method uses {{c1::[none]}} and is used by {{c1::Template Method, Abstract Factory}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Prototype uses {{c1::[none]}} and is used by {{c1::Abstract Factory}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Singleton uses {{c1::[none]}} and is used by {{c1::Abstract Factory, Facade}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Adapter uses {{c1::[none]}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Bridge uses {{c1::[none]}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Composite uses {{c1::Builder,Decorator,Flyweight,Iterator,Visitor}} and is used by {{c1::Chain of Responsibility,Command,Interpreter}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Decorator uses {{c1::Strategy}} and is used by {{c1::Composite, Strategy}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Facade uses {{c1::Singleton}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Flyweight uses {{c1::[none]}} and is used by {{c1::Composite, Interpreter, State, Strategy}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Proxy uses {{c1::[none]}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Chain of Responsibility uses {{c1::Composite}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Command uses {{c1::Memento, Composite}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Interpreter uses {{c1::Composite, Flyweight, Visitor}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Iterator uses {{c1::Memento}} and is used by {{c1::Composite, Visitor}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Mediator uses {{c1::[none]}} and is used by {{c1::Observer}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Memento uses {{c1::[none]}} and is used by {{c1::Iterator, Command}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Observer uses {{c1::Mediator}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: State uses {{c1::Flyweight}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Strategy uses {{c1::Decorator, Flyweight}} and is used by {{c1::Decorator, Template Method}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Template Method uses {{c1::Factory Method, Strategy}} and is used by {{c1::[none]}}	DesignPatterns	1	
+Overview Design Pattern Relationships: Visitor uses {{c1::Iterator}} and is used by {{c1::Interpreter, Composite}}	DesignPatterns	1	
+What is my pnemonic for the eight common causes of redesign? {{c1::1. C third letter, 2. 3. and 4. 3-way dependenC, 5. and 6. Trisha vs Martin, 7. and 8. classy children and orphans}}	DesignPatterns	1	
+C third letter means {{c1::1. creating an object by specifying a class explicitly}}	DesignPatterns	1	
+3-way dependenC means {{c1::2. dependence on specific operations, 3. dependence on hardware and software platforms, 4. dependence on object representations or implementations}}	DesignPatterns	1	
+Trisha vs Martin means {{c1::5. algorithmic dependencies and 6. tight coupling}}	DesignPatterns	1	
+classy children and orphans means {{c1::7. extending functionality by subclassing and 8. inability to alter classes conveniently}}	DesignPatterns	1	
+How do common causes for redesign {{c1::2. dependence on specific operations}} and {{c1::5. algorithmic dependencies}} differ?  {{c2::the former is ensuring how it gets done doesn't matter, it's up to the team to determine how and when; the latter is about the dialog with business analysts and safeguarding against future change in the way the software should work}}	DesignPatterns	1	
+How do common causes for redesign {{c1::3. dependence on hardware/software platform}} and {{c1::4. Dependence on object representations or implementations}} differ?  {{c2::the former is a subset of the latter in a way: the APIs of hardware/software are an abstraction on which to avoid depending, implemented as interfaces, whereas the latter are an abstraction on which to avoid depending, implemented as concretions, including the concretion of where they are located. The addressing patterns adhere to this subset relationship.}}	DesignPatterns	1	
+The Structurals go A B C D F F P; {{c1::3. dependence on hardware/software platform and 4. dependence on object representation or implementation::what pair of common causes for redesign?}} have addressing patterns {{c2::A B: Abstract Factory (creational), Bridge (structural)}}, these {{c2::being the entirety of the 1-1-0 of the former and the first half of 1-2-1 of the latter::accounting for the purpose counts how?}}.	DesignPatterns	1	
+How to form 4. Dependence on object representation/implementation's set of addressing patterns? {{c1::add to its subset 3. Dependence on hardware/software platform's two patterns its own two exclusives: Proxy and Memento.}}	DesignPatterns	1	
+How do common causes for redesign {{c1::5. algorithmic dependencies}} and {{c1::6. tight coupling}} differ? {{c2::the former is about working with Trisha with stuff in the flowchart, to account for its needing change or augmentation; the latter was about clean code -- keeping arity low and fields of a class used by most of its methods.}}	DesignPatterns	1	
+{{c1::2. dependence on specific operations}} is easy: {{c2::0-0-2::what purpose counts?}} with {{c2::the 2 being the very first two behavioral patterns::what pnemonic?}}	DesignPatterns	1	
+Template Method explains the rest of 5. Algorithmic Dependencies' addressing patterns: {{c2::all three of the final patterns are included: Strategy, Template Method, and Visitor.}}	DesignPatterns	1	
+Form {{c1::6. Tight coupling::cause of redesign}}'s addressing patterns by {{c2::taking the union of 2. dependence on specific operations and 3. dependence on hardware/software platforms, add its exclusives Facade and Mediator, as well as Observer, shared with 7. extending functionality by subclassing.}}	DesignPatterns	1	
+{{c1::7. Extending functionality by subclassing}} is the one cause for redesign in which {{c2::bridge}} appears but {{c2::abstract factory}} does not, related to the subset relationship of 3., 4., and 6.	DesignPatterns	1	
+{{c1::7. Extending functionality by subclassing}} is the one cause for redesign in which {{c2::Chain of Responsibility}} appears but {{c2::Command}} does not, related to the subset relationship of 2. and 6.	DesignPatterns	1	
+Among the last three patterns, {{c1::5. Algorithmic dependencies::cause for redesign}} gets {{c2::them all with Template Method exclusive::pattern(s?)}}, {{c1::7. Extending functionality by subclassing::cause for redesign}} gets {{c2::Strategy::pattern(s)?}} and {{c2::8. Inability to alter classes conveniently::cause for redesign}} gets {{c2::Visitor::pattern(s)?}}	DesignPatterns	1	
+Form {{c1::7. Extending functionality by subclassing}} by {{c2::thumb nose at bridge and chain of responsibility, grab Composite, dance with 8./Decorator, 6./Observer, 5./Strategy}}	DesignPatterns	1	
+{{c1::8. Inability to alter classes conveniently}} was already danced with by {{c2::7.Extending functionality by subclassing}} via Decorator; it has its exclusive Adapter, and the tussle with 5. and 7. over the last three got it Visitor.	DesignPatterns	1	
+{{c1::Singleton| Flyweight| Interpreter, and State}} are the {{c2::four patterns not referenced in address to common causes for redesign}}.	DesignPatterns	1	
+{{c1::Factory Method, Prototype| Proxy| Memento}} are the {{c2::four patterns that address only a single common cause for redesign, and it is among 1. - 4.}}	DesignPatterns	1	
+{{c1::|Adapter, Composite, Facade, Proxy|}} are the {{c2::four structural patterns that address only a single common cause for redesign, and it is among 5. - 8.}}	DesignPatterns	1	
+{{c1::Builder||Iterator, Mediator}} are the {{c2::three nonstructural patterns that address only a single cause for redesign, and it is among 5. - 8.}}	DesignPatterns	1	
+{{c1::Factory Method, Prototype::pattern(s)}} can be applied in response ONLY to {{c2::1. Creating an object by specifying the class explicitly::cause for redesign}}	DesignPatterns	1	
+{{c1::Proxy and Memento::pattern(s)}} can be applied in response ONLY to {{c2::4. Dependence on object representations/implementations::cause for redesign}}	DesignPatterns	1	
+{{c1::Builder, Iterator, Template Method::pattern(s)}} can be applied in response ONLY to {{c2::5. Algorithmic dependencies::cause for redesign}}	DesignPatterns	1	
+{{c1::Facade and Mediator::pattern(s)}} can be applied in response ONLY to {{c2::6. Tight coupling.::cause for redesign}}	DesignPatterns	1	
+{{c1::Composite::pattern(s)}} can be applied in response ONLY to {{c2::7. Extending functionality by subclassing::cause for redesign}}	DesignPatterns	1	
+{{c1::Adapter::pattern(s)}} can be applied in response ONLY to {{c2::8. Inability to alter classes conveniently::cause for redesign}}	DesignPatterns	1	
+{{c1::|Decorator|Command, Observer, Strategy, Visitor::pattern(s)}} can be applied in response to {{c2::two::how many?}} causes for redesign.	DesignPatterns	1	
+{{c1::|Chain of Responsibility|::pattern(s)?}} can be applied in response to {{c2::three::how many?}} causes for redesign.	DesignPatterns	1	
+{{c1::Abstract Factory|Bridge|::pattern(s)?}} can be applied in response to {{c2::four::how many?}} causes for redesign.	DesignPatterns	1	
+When {{c1::2. Dependence on specific operations}} unions with {{c1::4. Dependence on object representations/implementations}} to form {{c2::6. Tight Coupling}}, the union fails near the end of the operation.  {{c1::4}}.'s two non-{{c1::3}}. members mutate: Among {{c3::structurals::purpose?}}, {{c1::4}}.'s {{c3::Proxy::pattern(s)}} becomes {{c2::6}}.'s {{c3::Facade/exclusive::pattern(s) and sharing(s)}}, and among {{c3::behaviorals::purpose?}}, {{c1::4}}.'s {{c3::Memento::pattern(s)}} becomes {{c3::Mediator/exclusive and Observer/shared with 7.::pattern(s) and sharing(s)}}.	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::true}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::true}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::true}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Creating objects by specifying a class explicitly. {{c1::false}}	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::true}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::true}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Dependence on specific operations. {{c1::false}}	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::true}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::true}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Dependence on hardware/software platform. {{c1::false}}	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::false}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Dependence on object representations/implementations. {{c1::true}}	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::true}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Algorithmic dependencies. {{c1::false}}	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Tight coupling. {{c1::true}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Tight coupling. {{c1::false}}	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::true}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Extending functionality by subclassing. {{c1::false}}	DesignPatterns	1	
+True/false: the Builder pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Iterator pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Proxy pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Singleton pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Facade pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Abstract Factory pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Command pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Flyweight pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Visitor pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::true}}	DesignPatterns	1	
+True/false: the Observer pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Chain of Responsibility pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Factory Method pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Composite pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Prototype pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Bridge pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the State pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Interpreter pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Template Method pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Mediator pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Adapter pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::true}}	DesignPatterns	1	
+True/false: the Strategy pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+True/false: the Decorator pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::true}}	DesignPatterns	1	
+True/false: the Memento pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Creating an object by specifying a class explicitly}}. Addressing design patterns: {{c2::Abstract Factory, Factory Method, Prototype}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Dependence on specific operations}}. Addressing design patterns: {{c2::Chain of Responsibility, Command}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Dependence on hardware and software platform}}. Addressing design patterns: {{c2::Abstract Factory, Bridge}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Dependence on object representations or implementations}}. Addressing design patterns: {{c2::Abstract Factory, Bridge, Memento, Proxy}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Algorithmic dependencies}}. Addressing design patterns: {{c2::Builder, Iterator, Strategy, Template Method, Visitor}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Tight coupling}}. Addressing design patterns: {{c2::Abstract Factory, Bridge, Chain of Responsibility, Command, Facade, Mediator, Observer}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Extending functionality by subclassing}}. Addressing design patterns: {{c2::Bridge, Chain of Responsibility, Composite, Decorator, Observer, Strategy}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Inability to alter classes conveniently}}. Addressing design patterns: {{c2::Adapter, Decorator, Visitor}}	DesignPatterns	1	
+Pattern name: {{c1::Abstract Factory}}; Aspect(s) that can vary: {{c2::families of product objects}}	DesignPatterns	1	
+Pattern name: {{c1::Builder}}; Aspect(s) that can vary: {{c2::how a composite object gets created}}	DesignPatterns	1	
+Pattern name: {{c1::Factory Method}}; Aspect(s) that can vary: {{c2::subclass of object that is instantiated}}	DesignPatterns	1	
+Pattern name: {{c1::Prototype}}; Aspect(s) that can vary: {{c2::class of object that is instantiated}}	DesignPatterns	1	
+Pattern name: {{c1::Singleton}}; Aspect(s) that can vary: {{c2::the sole instance of a class}}	DesignPatterns	1	
+Pattern name: {{c1::Adapter}}; Aspect(s) that can vary: {{c2::interface to an object}}	DesignPatterns	1	
+Pattern name: {{c1::Bridge}}; Aspect(s) that can vary: {{c2::implementation of an object}}	DesignPatterns	1	
+Pattern name: {{c1::Composite}}; Aspect(s) that can vary: {{c2::structure and composition of an object}}	DesignPatterns	1	
+Pattern name: {{c1::Decorator}}; Aspect(s) that can vary: {{c2::responsibilities of an object without subclassing}}	DesignPatterns	1	
+Pattern name: {{c1::Facade}}; Aspect(s) that can vary: {{c2::interface to a subsystem}}	DesignPatterns	1	
+Pattern name: {{c1::Flyweight}}; Aspect(s) that can vary: {{c2::storage costs of objects}}	DesignPatterns	1	
+Pattern name: {{c1::Proxy}}; Aspect(s) that can vary: {{c2::how an object is accessed; its location}}	DesignPatterns	1	
+Pattern name: {{c1::Chain of Responsibility}}; Aspect(s) that can vary: {{c2::object that can fulfill a request}}	DesignPatterns	1	
+Pattern name: {{c1::Command}}; Aspect(s) that can vary: {{c2::when and how a request is fulfilled}}	DesignPatterns	1	
+Pattern name: {{c1::Interpreter}}; Aspect(s) that can vary: {{c2::grammar and interpretation of a language}}	DesignPatterns	1	
+Pattern name: {{c1::Iterator}}; Aspect(s) that can vary: {{c2::how an aggregate's elements are accessed, traversed}}	DesignPatterns	1	
+Pattern name: {{c1::Mediator}}; Aspect(s) that can vary: {{c2::how and which objects interact with each other}}	DesignPatterns	1	
+Pattern name: {{c1::Memento}}; Aspect(s) that can vary: {{c2::what private information is stored outside an object, and when}}	DesignPatterns	1	
+Pattern name: {{c1::Observer}}; Aspect(s) that can vary: {{c2::number of objects that depend on another object; how the dependent objects stay up to date}}	DesignPatterns	1	
+Pattern name: {{c1::State}}; Aspect(s) that can vary: {{c2::states of an object}}	DesignPatterns	1	
+Pattern name: {{c1::Strategy}}; Aspect(s) that can vary: {{c2::an algorithm}}	DesignPatterns	1	
+Pattern name: {{c1::Template Method}}; Aspect(s) that can vary: {{c2::steps of an algorithm}}	DesignPatterns	1	
+Pattern name: {{c1::Visitor}}; Aspect(s) that can vary: {{c2::operations that can be applied to object(s) without changing their class(es)}}	DesignPatterns	1	
+In "true" delegation, {{c1::the receiver}} always {{c1::passes itself to the delegate}}.	DesignPatterns	1	
+The {{c1::State}} pattern {{c3::always::always/sometimes}} uses delegation by {{c2::delegating requests to a State object that represents its current state}}.	DesignPatterns	1	
+The {{c1::Strategy}} pattern {{c3::always::always/sometimes}} uses true delegation by {{c2::delegating a specific request to an object that represents a strategy for carrying out the request}}.	DesignPatterns	1	
+The {{c1::Visitor}} pattern {{c3::always::always/sometimes}} uses true delegation by {{c2::the operation that gets performed delegating to the object named the same as the pattern}}.	DesignPatterns	1	
+The {{c1::Mediator}} pattern {{c3::sometimes::always/sometimes}} uses true delegation by {{c2::passing along a reference to itself}}.	DesignPatterns	1	
+The {{c1::Chain of Responsibility}} pattern {{c3::sometimes::always/sometimes}} uses true delegation by {{c2::the request carrying with it a reference to the original object receiving the request}}.	DesignPatterns	1	
+The {{c1::Bridge}} pattern {{c3::sometimes::always/sometimes}} uses true delegation by {{c2::the abstraction and implementation being closely matched, and the abstraction delegating operations to the implementation}}.	DesignPatterns	1	
