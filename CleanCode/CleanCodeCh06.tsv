@@ -1,7 +1,7 @@
-{{c2::Procedural code (code using data structures)}} makes it easy to {{c1::add new functions/behaviors}} without changing {{c1::the existing data structures}}.  {{c2::OO code}} makes it easy to add new {{c1::classes}} without changing {{c1::existing functions/behaviors}}.
-{{c2::Procedural code (code using data structures)}} makes it hard to {{c1::add new data structures}} because {{c1::all the data structures must change}}.  {{c2::OO code}} makes it hard to {{c1::add new functions/behaviors}} because {{c1::all the classes must change}}.
-Want to add new data types?  Use {{c1::OO}}.  Want to add new functions/behaviors?  Use {{c1::procedural}}.
-Law of Demeter: hybrid data structures/objects are {{c1::bad.  Do not use them.}}.  Their creation is called {{c1::feature envy}}.
-Law of Demeter: does not apply when {{c1::the accessed things are data structures, not objects}}.
-Law of Demeter: fix violations by {{c1::having the first object in the chain of calls perform the required processing on the data so retrieved and return the needed result}}.
-DTOs and active records: these are {{c1::data structures}}, despite {{c1::save() and find()}} on the latter. Treat them as such and do not {{c1::create hybrids data structure/object}}.  Instead, {{c1::create separate objects that contain the business rules and that hide their internal data (which are probably just instances of the Active Record)}}.
+{{c2::Procedural code (code using data structures)}} makes it easy to {{c1::add new functions/behaviors}} without changing {{c1::the existing data structures}}.  {{c2::OO code}} makes it easy to add new {{c1::classes}} without changing {{c1::existing functions/behaviors}}.	CleanCode	6	
+{{c2::Procedural code (code using data structures)}} makes it hard to {{c1::add new data structures}} because {{c1::all the data structures must change}}.  {{c2::OO code}} makes it hard to {{c1::add new functions/behaviors}} because {{c1::all the classes must change}}.	CleanCode	6	
+Want to add new data types?  Use {{c1::OO}}.  Want to add new functions/behaviors?  Use {{c1::procedural}}.	CleanCode	6	
+Law of Demeter: hybrid data structures/objects are {{c1::bad.  Do not use them.}}.  Their creation is called {{c1::feature envy}}.	CleanCode	6	
+Law of Demeter: does not apply when {{c1::the accessed things are data structures, not objects}}.	CleanCode	6	
+Law of Demeter: fix violations by {{c1::having the first object in the chain of calls perform the required processing on the data so retrieved and return the needed result}}.	CleanCode	6	
+DTOs and active records: these are {{c1::data structures}}, despite {{c1::save() and find()}} on the latter. Treat them as such and do not {{c1::create hybrids data structure/object}}.  Instead, {{c1::create separate objects that contain the business rules and that hide their internal data (which are probably just instances of the Active Record)}}.	CleanCode	6	

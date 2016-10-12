@@ -1,16 +1,16 @@
-Functions should {{c1::do one thing}}, {{c1::do it well}}, {{c1::do it only}}.
-The indent level of a function should {{c1::not be greater than one or two}}.
-Another way to know that a function is doing more than "one thing" is if {{c1::you can extract another function from it with a name that is not merely a restatement of its implementation}}.
-The Stepdown Rule (to ensure we're writing functions that stay at a single level of abstraction) is {{c1::to read the program as if it were a set of TO paragraphs, each of which is describing the current level of abstraction and referencing subsequent TO paragraphs at the next level down}}.
-Switch statements can be tolerated only if 1) {{c1::they appear only once}}, 2) {{c1::are used to create polymorphic objects}}, 3) {{c1::are hidden behind an inheritance relationship so that the rest of the system can't see them}}.
-A function taking {{c1::zero}} argument(s) is called {{c2::niladic}}.
-A function taking {{c1::one}} argument(s) is called {{c2::monadic}}.
-A function taking {{c1::two}} argument(s) is called {{c2::dyadic}}.
-A function taking {{c1::three}} argument(s) is called {{c2::triadic}}.
-A function taking {{c1::four or more}} argument(s) is called {{c2::polyadic}}.
-Avoid all monadic forms unless 1) {{c1::asking a question about the argument}}, or 2) {{c1::events}}.
-The type never to pass as an argument to a function is, {{c1::boolean}}.
-Prefer {{c1::nilads}} to {{c1::monads}} to {{c1::dyads}} to {{c1::triads}}.  Don't use {{c1::polyads}}.
-Naming functions: with monads, dyads, and triads, *do* {{c1::encode the argument names into the function name}}.
-Functions should either {{c1::do something}} or {{c1::answer something}} but not both.
-Prefer {{c1::exceptions}} to error codes.
+Functions should {{c1::do one thing}}, {{c1::do it well}}, {{c1::do it only}}.	CleanCode	3	
+The indent level of a function should {{c1::not be greater than one or two}}.	CleanCode	3	
+Another way to know that a function is doing more than "one thing" is if {{c1::you can extract another function from it with a name that is not merely a restatement of its implementation}}.	CleanCode	3	
+The Stepdown Rule (to ensure we're writing functions that stay at a single level of abstraction) is {{c1::to read the program as if it were a set of TO paragraphs, each of which is describing the current level of abstraction and referencing subsequent TO paragraphs at the next level down}}.	CleanCode	3	
+Switch statements can be tolerated only if 1) {{c1::they appear only once}}, 2) {{c1::are used to create polymorphic objects}}, 3) {{c1::are hidden behind an inheritance relationship so that the rest of the system can't see them}}.	CleanCode	3	
+A function taking {{c1::zero}} argument(s) is called {{c2::niladic}}.	CleanCode	3	
+A function taking {{c1::one}} argument(s) is called {{c2::monadic}}.	CleanCode	3	
+A function taking {{c1::two}} argument(s) is called {{c2::dyadic}}.	CleanCode	3	
+A function taking {{c1::three}} argument(s) is called {{c2::triadic}}.	CleanCode	3	
+A function taking {{c1::four or more}} argument(s) is called {{c2::polyadic}}.	CleanCode	3	
+Avoid all monadic forms unless 1) {{c1::asking a question about the argument}}, or 2) {{c1::events}}.	CleanCode	3	
+The type never to pass as an argument to a function is, {{c1::boolean}}.	CleanCode	3	
+Prefer {{c1::nilads}} to {{c1::monads}} to {{c1::dyads}} to {{c1::triads}}.  Don't use {{c1::polyads}}.	CleanCode	3	
+Naming functions: with monads, dyads, and triads, *do* {{c1::encode the argument names into the function name}}.	CleanCode	3	
+Functions should either {{c1::do something}} or {{c1::answer something}} but not both.	CleanCode	3	
+Prefer {{c1::exceptions}} to error codes.	CleanCode	3	
