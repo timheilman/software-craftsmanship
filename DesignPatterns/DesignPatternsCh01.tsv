@@ -27,7 +27,7 @@ Pattern name: {{c1::State}} Intent: {{c2::Allow an object to alter its behavior 
 Pattern name: {{c1::Strategy}} Intent: {{c2::Define a family of algorithms, encapsulate each one, and make them interchangeable. This pattern lets the algorithm vay independently from clients that use it.}}	DesignPatterns	1	
 Pattern name: {{c1::Template Method}} Intent: {{c2::Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. This pattern lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.}}	DesignPatterns	1	
 Pattern name: {{c1::Visitor}} Intent: {{c2::Represent an operation to be performed on the elements of an object structure. This pattern lets you define a new operation without changing the classes of the elements on which it operates.}}	DesignPatterns	1	
-A {{c1::scope and purpose}} is called a {{c2::classification}}.	DesignPatterns	1	
+A/an {{c1::scope and purpose}} is called a/an {{c2::classification}}.	DesignPatterns	1	
 Abstract Factory is of classification {{c1::object creational}}.	DesignPatterns	1	
 Builder is of classification {{c1::object creational}}.	DesignPatterns	1	
 Factory Method is of classification {{c1::class creational}}.	DesignPatterns	1	
