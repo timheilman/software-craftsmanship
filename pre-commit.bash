@@ -8,3 +8,4 @@ AN_CLOZE_PATTERN='^+.*[^/][aA][nN] {{';
 for cloze_pattern in "$A_CLOZE_PATTERN" "$AN_CLOZE_PATTERN"; do
     git diff --cached | grep "$cloze_pattern" && echo $ARTICLE_REJECTION && exit 1;
 done
+exit 0
