@@ -1,5 +1,5 @@
 {{c1::Coding style and readability}} set precedents that continue to affect {{c2::maintainability and extensibility}} long after the original code ha been changed beyond recognition.	CleanCode	5	
-Systems on the order of {{c1::50,000}} lines have been built out of files that are typically {{{c2::200}} lines long, with an upper limit of {{c2::500}} lines.	CleanCode	5	
+Systems on the order of {{c1::50,000}} lines have been built out of files that are typically {{c2::200}} lines long, with an upper limit of {{c2::500}} lines.	CleanCode	5	
 Code should read most like {{c1::the inverted triangle technique from newspapers::a style of organic language writing}}.	CleanCode	5	
 Use newlines when {{c1::you want to separate concepts}}, not when {{c1::you want to associate closely related code}}	CleanCode	5	
 In a well-designed class instance variables are used by {{c1::many if not all::how many?}} of the methods of the class, thus they should be declared {{c1::at the top of the class::where?}}.	CleanCode	5	
