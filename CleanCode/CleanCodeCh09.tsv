@@ -1,0 +1,20 @@
+The first law of TDD is {{c1::You may not write production code until you've written a failing unit test}}.
+The second law of TDD is {{c1::You may not write more of a unit test than is sufficient to fail, and not compiling is failing}}.
+The third law of TDD is {{c1::You may not write more production code than is sufficient to pass the currently failing test}}.
+Having dirty tests is {{c1::equivalent to, if not worse than, having no tests}}.
+The key to keeping your design and architecture as clean as possible is {{c1::an automated suite of unit tests, because they enable change}}.
+The three things that make a clean test are {{c1::readability, readability, and readability}}.
+What makes code readable?  {{c1::clarity, simplicity, and density of expression}}.
+In a test you want to {{c1::say a lot with as few expressions as possible}}.
+What does refactoring of tests lead to? {{c1::domain-specific testing languages}}.  This is good.
+Test code must still be as {{c1::simple, succinct, and expressive}} as production code, but it need not be as {{c1::efficient}}.
+Ask yourself as you read the test, {{c1::"Is it easy to read and understand what is being tested?"}} If not, consider {{c1::a domain-specific testing language}}, as in the {{c1::HVAC}} example.
+The things usually involved in the test-environment / production-environment dual standard for code are {{c1::memory and CPU efficiency}}.
+How many asserts per test? {{c1::Strive for one. Only use more when the alternatives are worse.}}
+How many concepts per test? {{c1::Always just one.}}
+What is the Object Mentor FIRST acronym expansion? {{c1::Fast, Independent, Repeatable, Self-Validating, Timely}}
+Object Mentor FIRST: Tests should be Fast: {{c1::run quickly}}.
+Object Mentor FIRST: Tests should be Independent: {{c1::runnable in any order}}.
+Object Mentor FIRST: Tests should be Repeatable: {{c1::in any environment, even production or your laptop without a network}}.
+Object Mentor FIRST: Tests should be Self-Validating: {{c1::i.e. have a boolean output}}.
+Object Mentor FIRST: Tests should be Timely: {{c1::close to when the code being tested is written, for unit tests, immediately before the production code that makes them pass}}.

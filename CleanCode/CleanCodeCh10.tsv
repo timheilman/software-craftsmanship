@@ -1,0 +1,12 @@
+A class should begin with {{c1::a list of variables}}, then {{c1::public static constants, if any}}, then {{c1::private static variables}}, then {{c1::private instance variables}}, then {{c1::public functions}}, then {{c1::private utility functions}}.
+There is seldom a good reason to have a/an {{c1::public}} variable in a class.
+{{c1::Loosening encapsulation}} for testing is always a last resort.
+With functions, you count {{c1::lines}}.  With classes, you count {{c1::responsibilities}}.
+The name of a class should describe {{c1::what responsibilities it fulfills}}.
+We should be able to write a short description of the class in about {{c1::25}} words without using the words, {{c1::"if," "and," "or," or "but."}}
+Each small class should have a single {{c1::responsibility}}, a single {{c1::reason to change}}, and collaborate with {{c1::a few others}} to achieve the desired system behavior.
+Classes should have {{c1::a small number of::how many?}} instance variables.
+Each method of a class should manipulate {{c1::one or more::how many?}} instance variables.
+The more {{c1::instance variables}} a method manipulates, the more {{c1::cohesive it is to its class}}.
+How can cohesion inform refactoring one class out of another? {{c1::When there are a proliferation of instance variables used by a subset of methods.}}
+What are some reasons refactoring can cause a program's listing to become longer? {{c1::more descriptive variable names, function and class declarations as a way to add commentary to the code, whitespace and formatting techniques to keep the program readable}}.
