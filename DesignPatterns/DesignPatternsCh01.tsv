@@ -311,14 +311,14 @@ True/false: the Adapter pattern is a remedy to this cause of redesign: Inability
 True/false: the Strategy pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
 True/false: the Decorator pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::true}}	DesignPatterns	1	
 True/false: the Memento pattern is a remedy to this cause of redesign: Inability to alter classes conveniently. {{c1::false}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Creating an object by specifying a class explicitly}}. Addressing design patterns: {{c2::Abstract Factory, Factory Method, Prototype}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Dependence on specific operations}}. Addressing design patterns: {{c2::Chain of Responsibility, Command}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Dependence on hardware and software platform}}. Addressing design patterns: {{c2::Abstract Factory, Bridge}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Dependence on object representations or implementations}}. Addressing design patterns: {{c2::Abstract Factory, Bridge, Memento, Proxy}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Algorithmic dependencies}}. Addressing design patterns: {{c2::Builder, Iterator, Strategy, Template Method, Visitor}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Tight coupling}}. Addressing design patterns: {{c2::Abstract Factory, Bridge, Chain of Responsibility, Command, Facade, Mediator, Observer}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Extending functionality by subclassing}}. Addressing design patterns: {{c2::Bridge, Chain of Responsibility, Composite, Decorator, Observer, Strategy}}	DesignPatterns	1	
-Common cause of redesign (refactor): {{c1::Inability to alter classes conveniently}}. Addressing design patterns: {{c2::Adapter, Decorator, Visitor}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Creating an object by specifying a class explicitly}}. Addressing design patterns: {{c2::3-0-0: Abstract Factory, Factory Method, Prototype; ; }}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Dependence on specific operations}}. Addressing design patterns: {{c2::0-1-1: ; Command ; Chain of Responsibility}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Dependence on hardware and software platform}}. Addressing design patterns: {{c2::1-1-0: Abstract Factory; Bridge; }}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Dependence on object representations or implementations}}. Addressing design patterns: {{c2::1-2-1: Abstract Factory; Bridge, Proxy; &nbsp;Memento}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Algorithmic dependencies}}. Addressing design patterns: {{c2::1-0-4: Builder; ; Iterator, Strategy, Template Method, Visitor}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Tight coupling}}. Addressing design patterns: {{c2::1-2-4: Abstract Factory; Bridge, Facade; Chain of Responsibility, Command, Mediator, Observer}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Extending functionality by subclassing}}. Addressing design patterns: {{c2::0-3-3: ; Bridge, Composite, Decorator; Chain of Responsibility, Observer, Strategy}}	DesignPatterns	1	
+Common cause of redesign (refactor): {{c1::Inability to alter classes conveniently}}. Addressing design patterns: {{c2::0-2-1: ; Adapter, Decorator; Visitor}}	DesignPatterns	1	
 Pattern name: {{c1::Abstract Factory}}; Aspect(s) that can vary: {{c2::families of product objects}}	DesignPatterns	1	
 Pattern name: {{c1::Builder}}; Aspect(s) that can vary: {{c2::how a composite object gets created}}	DesignPatterns	1	
 Pattern name: {{c1::Factory Method}}; Aspect(s) that can vary: {{c2::subclass of object that is instantiated}}	DesignPatterns	1	
