@@ -1,12 +1,12 @@
-Error handling: use {{c1::exceptions}}, not {{c2::return codes}}.
-Error handling: write {{c1::your try-catch-finally block}} first.
-Error handling: use {{c1::unchecked}} exceptions.
-Error handling: each exception thrown should have {{c1::enough context to determine the source and location of the error}}.
-Error handling: informative error messages provide {{c1::1) the operation that failed and 2) the type of failure, and 3) sufficient information to satisfy your logging strategy}}.
-Error handling: Define exception classes principally in terms of {{c1::a caller's needs}}, NOT principally in terms of {{c1::source nor type}}.
-Error handling: Third-party APIs: It is a best practice to {{c1::wrap, and potentially rewrap thrown exceptions, in terms of caller's needs}}.
-One final advantage of wrapping a third-party API is that {{c1::you aren't tied to a particular vendor's API design choices. You can define an API you feel comfortable with}}.
-When *do* you want to catch exceptions rather than letting them be caught above you?  {{c1::When doing so may be exceptional to the called library, but the your caller considers it a part of the definition of "normal" flow}}.  The {{c1::per-diem MealExpenses}} example demonstrates the {{c1::Special Case Pattern}}.
-Do not {{c1::return}} null.  Consider {{c1::throwing an exception}} or {{c1::the Special Case pattern}}.
-Do not {{c1::pass}} null.  In most programming languages there is no good way to {{c1::deal with a null that is passed by a caller accidentally}}.
-
+Error handling: use {{c1::exceptions}}, not {{c2::return codes}}.	CleanCode	7	
+Error handling: write {{c1::your try-catch-finally block}} first.	CleanCode	7	
+Error handling: use {{c1::unchecked}} exceptions.	CleanCode	7	
+Error handling: each exception thrown should have {{c1::enough context to determine the source and location of the error}}.	CleanCode	7	
+Error handling: informative error messages provide {{c1::1) the operation that failed and 2) the type of failure, and 3) sufficient information to satisfy your logging strategy}}.	CleanCode	7	
+Error handling: Define exception classes principally in terms of {{c1::a caller's needs}}, NOT principally in terms of {{c1::source nor type}}.	CleanCode	7	
+Error handling: Third-party APIs: It is a best practice to {{c1::wrap, and potentially rewrap thrown exceptions, in terms of caller's needs}}.	CleanCode	7	
+One final advantage of wrapping a third-party API is that {{c1::you aren't tied to a particular vendor's API design choices. You can define an API you feel comfortable with}}.	CleanCode	7	
+When *do* you want to catch exceptions rather than letting them be caught above you?  {{c1::When doing so may be exceptional to the called library, but the your caller considers it a part of the definition of "normal" flow}}.  The {{c1::per-diem MealExpenses}} example demonstrates the {{c1::Special Case Pattern}}.	CleanCode	7	
+Do not {{c1::return}} null.  Consider {{c1::throwing an exception}} or {{c1::the Special Case pattern}}.	CleanCode	7	
+Do not {{c1::pass}} null.  In most programming languages there is no good way to {{c1::deal with a null that is passed by a caller accidentally}}.	CleanCode	7	
+	CleanCode	7	
