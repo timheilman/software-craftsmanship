@@ -1,6 +1,8 @@
+The more {{c1::ambiguous the class name}}, the more likely {{c2::the class has too many responsibilities}}.	CleanCode	10	
 A class should begin with {{c1::a list of variables}}, then {{c1::public static constants, if any}}, then {{c1::private static variables}}, then {{c1::private instance variables}}, then {{c1::public functions}}, then {{c1::private utility functions}}.	CleanCode	10	
 There is seldom a good reason to have a/an {{c1::public}} variable in a class.	CleanCode	10	
 {{c1::Loosening encapsulation}} for testing is always a last resort.	CleanCode	10	
+The first rule of classes is that {{c1::they should be small}}.  The second rule of classes is that {{c1::they should be smaller than that}}.	CleanCode	10	
 With functions, you count {{c1::lines}}.  With classes, you count {{c1::responsibilities}}.	CleanCode	10	
 The name of a class should describe {{c1::what responsibilities it fulfills}}.	CleanCode	10	
 We should be able to write a short description of the class in about {{c1::25}} words without using the words, {{c1::"if," "and," "or," or "but."}}	CleanCode	10	
@@ -10,3 +12,17 @@ Each method of a class should manipulate {{c1::one or more::how many?}} instance
 The more {{c1::instance variables}} a method manipulates, the more {{c1::cohesive it is to its class}}.	CleanCode	10	
 How can cohesion inform refactoring one class out of another? {{c1::When there are a proliferation of instance variables used by a subset of methods.}}	CleanCode	10	
 What are some reasons refactoring can cause a program's listing to become longer? {{c1::more descriptive variable names, function and class declarations as a way to add commentary to the code, whitespace and formatting techniques to keep the program readable}}.	CleanCode	10	
+PrimeGenerator case study: The three responsibilities after refactor were {{c1::PrimeGenerator, RowColumnPagePrinter, and PrimePrinter}}.	CleanCode	10	
+PrimeGenerator case study: {{c1::PrimePrinter}} would change iff {{c2::the method of invocation changed}}.	CleanCode	10	
+PrimeGenerator case study: {{c1::RowColumnPagePrinter}} would change iff {{c2::the formatting of the output changed}}.	CleanCode	10	
+PrimeGenerator case study: {{c1::PrimeGenerator}} would change iff {{c2::the algorithm for enumerating primes changed}}.	CleanCode	10	
+In a clean system we organize our classes so as to {{c1::reduce the risk of change}}.	CleanCode	10	
+Sql case study: The class pre-refactor violates the SRP from a reason-to-change standpoint because {{c1::it must change when either a new statement type (update) or the details of a single statement type changes (subselects)}}.	CleanCode	10	
+Sql case study: The class pre-refactor violates the SRP from an organizational standpoint because {{c1::there are private methods that seem to relate only to a subset of public methods (selectWithCritera w/select statements)}}.	CleanCode	10	
+Sql case study: The primary spur for taking action should be {{c1::system change itself}}. If we {{c1::don't need new functionality in the foreseeable future}}, then we {{c1::should leave Sql alone}}.  As soon as we {{c1::open up the class}}, then {{c1::we should consider fixing the design}}.	CleanCode	10	
+Sql case study: The classes post-refactor satisfy the SRP from an organizational standpoint because {{c1::each class is excruciatingly simple}}.	CleanCode	10	
+Sql case study: The classes post-refactor satisfy the SRP from a reason-to-change standpoint because {{c1::we can code logic for update statements in a separate class}}.	CleanCode	10	
+Sql case study: The classes post-refactor satisfy the OCP because {{c1::every other Sql subclass can remain closed while the UpdateSql class is dropped in}}.	CleanCode	10	
+Open/closed principle: In an ideal system, we incorporate new features by {{c1::extending the system}}, not {{c1::making modifications to existing code}}.	CleanCode	10	
+Dependency Inversion Principle: {{c1::depend upon abstractions, not upon concretions}}.	CleanCode	10	
+Stock exchange case study: The StockExchange interface represents the abstract concept of {{c1::asking for the current price of a symbol}}. This abstraction {{c1::isolates all of the specific details of obtaining such a price, including from where that price is obtained}}.	CleanCode	10	
