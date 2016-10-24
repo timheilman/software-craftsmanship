@@ -2,6 +2,5 @@ There is a natural tension between the provider and user of an interface. Provid
 Do not pass {{c1::interfaces at a boundary, like Map,}} around your system.  Keep them {{c1::inside the class, or close family of classes, where they're used}}. Avoid {{c1::returning it from, or accepting it as an argument to, public APIs}}.	CleanCode	8	
 Learning third-party code is {{c1::hard}}.  Integrating third-party code is {{c1::hard too}}.  Doing them both at once is {{c1::doubly-hard}}.  Use {{c1::learning tests}}.	CleanCode	8	
 Learning tests focus on {{c1::what we want out of the third-party API we are learning}}.	CleanCode	8	
-Writing the interface we wish we had helps keep {{c1::client code more readable an focused on what it's trying to accomplish.	CleanCode	8	
-Keeping clean third-party boundaries by {{c1::wrapping or adapting}} them.	CleanCode	8	
-	CleanCode	8	
+Writing the interface we wish we had helps keep {{c1::client code more readable and focused on what it's trying to accomplish.}}	CleanCode	8	
+Keep clean third-party boundaries by {{c1::wrapping or adapting}} them.	CleanCode	8	
