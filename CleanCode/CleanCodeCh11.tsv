@@ -1,4 +1,4 @@
-Software systems should separate {{c1::the startup process}}, when {{c1::the application objects re constructed and the dependencies are "wired" together}} from {{c1:the runtime logic that takes over after startup}}.	CleanCode	11	
+Software systems should separate {{c1::the startup process}}, when {{c1::the application objects re constructed and the dependencies are "wired" together}} from {{c1::the runtime logic that takes over after startup}}.	CleanCode	11	
 Software systems are unique compared to {{c1::physical systems}}.  Their architectures can {{c1::grow incrementally}}, *if* {{c1::we maintain the proper separation of concerns}}.	CleanCode	11	
 POJOs (Plain old Java objects) have no dependencies on {{c1::enterprise frameworks (or any other domain)}}.	CleanCode	11	
 An optimal system architecture consists of modularized {{c1::domains of concern}}, each of which is implemented with {{c1::Plain Old Java (or other) Objects}}. The different {{c1::domains}} are integrated together with {{c1::minimally invasive Aspects or Aspect-like tools}}. This architecture can be {{c1::test-driven}}, just like the code.	CleanCode	11	

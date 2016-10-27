@@ -1,5 +1,5 @@
 The more {{c1::ambiguous the class name}}, the more likely {{c2::the class has too many responsibilities}}.	CleanCode	10	
-A class should begin with {{c1::a list of variables}}, then {{c1::public static constants, if any}}, then {{c1::private static variables}}, then {{c1::private instance variables}}, then {{c1::public functions}}, then {{c1::private utility functions}}.	CleanCode	10	
+A class should begin with {{c1::public static constants, if any}}, then {{c1::private static variables}}, then {{c1::private instance variables}}, then {{c1::public functions}}, then {{c1::private utility functions}}.	CleanCode	10	
 There is seldom a good reason to have a/an {{c1::public}} variable in a class.	CleanCode	10	
 {{c1::Loosening encapsulation}} for testing is always a last resort.	CleanCode	10	
 The first rule of classes is that {{c1::they should be small}}.  The second rule of classes is that {{c1::they should be smaller than that}}.	CleanCode	10	
