@@ -1,0 +1,14 @@
+To write clean code, you must first {{c1::write dirty code}} <em>and then</em> {{c1::<em>clean it</em>}}.	CleanCode	14	
+When our teachers tried to get us to write rough drafts of our compositions, the point was {{c1::writing clean compositions is a matter of successive refinement}}.  So too with writing clean code.	CleanCode	14	
+When coding, it's important to know the right time to {{c1::stop adding features and start refactoring}}.	CleanCode	14	
+One of the best ways to ruin a program is {{c1::to make massive changes to its structure in the name of improvement}}.	CleanCode	14	
+Uncle Bob was able to {{c1::make a very large number of very tiny changes}} because he had {{c2::created a suite of unit and acceptance tests while he was building the festering pile under refactor}}.	CleanCode	14	
+Refactoring is a lot like {{c1::solving a Rubik's cube}}. There are {{c1::lots of little steps required to achieve a large goal}}. Each one {{c1::enables the next}}.	CleanCode	14	
+Much of good software design is simply about {{c1::partitioning}} -- {{c1::creating appropriate places to put different kinds of code}}.	CleanCode	14	
+Nothing has a more profound and long-term degrading effect upon a development project than {{c1::bad code}}.	CleanCode	14	
+Bad schedules can be redone, bad requirements can be redefined, bad team dynamics can be repaired, but bad code {{c1::rots and ferments, becoming an inexorable weight that drags the team down}}.	CleanCode	14	
+Finding and breaking old dependencies is {{c1::a long and arduous task}}. On the other hand, keeping code clean is {{c1::relatively easy}}.	CleanCode	14	
+Refactoring is a/an {{c1::iterative process}} full of {{c1::trial and error}}, inevitably {{c1::converging}} on something that we feel is worthy of a professional.	CleanCode	15	
+No module is immune to {{c1::improvement}}.	CleanCode	15	
+Refactoring is not an activity of {{c1::nastiness or arrogance}}.  It is simply {{c1::a professional review}}. It's something we should all be {{c1::comfortable doing}} and {{c1::welcome when it is done for us}}.	CleanCode	16	
+{{c1::Doctors}} do professional reviews.  {{c1::Pilots}} do professional reviews.  {{c1::Lawyers}} do professional reviews.  {{c1::Programmers}} should be able to do professional reviews too.	CleanCode	16	
