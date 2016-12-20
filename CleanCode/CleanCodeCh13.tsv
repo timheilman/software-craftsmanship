@@ -1,0 +1,50 @@
+Decoupling what from when can dramatically improve both the {{c1::throughput}} and the {{c1::structure}} of an application.	CleanCode	13	
+Concurrency improves performance when {{c1::there is a lot of wait time that can be shared between multiple threads or processors}}.	CleanCode	13	
+Concurrency incurs some overhead, both in {{c1::performance}} as well as {{c1::writing additional code}}.	CleanCode	13	
+Correct concurrency is complex, even for {{c1::simple}} problems.	CleanCode	13	
+Concurrency bugs are often {{c1::ignored as one-offs}} instead of {{c1::the true defects they are}}.	CleanCode	13	
+Concurrency often requires {{c1::a fundamental change in design strategy}}.	CleanCode	13	
+The SRP for concurrency: {{c1::keep your concurrency-related code separate from other code}}.	CleanCode	13	
+Corollary 1 to the SRP for concurrency: Take {{c1::data encapsulation}} to heart; severely limit {{c1::the access of any data that may be shared}}.	CleanCode	13	
+Corollary 2 to the SRP for concurrency: Use {{c1::copies of objects}} that are either {{c1::read-only}} or are {{c1::written to from a single thread for most of the processing}}, then {{c1::the copies' results are merged in a single thread}}; UNLESS {{c1::the cost of additional object creation and garbage collection outweighs the benefit of not using an intrinsic lock (unlikely).}}	CleanCode	13	
+Corollary 3 to the SRP for concurrency: attempt to {{c1::partition data into independent subsets::verb w/clause and object}} that can {{c1::be operated on by independent threads}}, possibly {{c1::in different processors}}.	CleanCode	13	
+Concurrency in Java >=5: {{c1::ConcurrentHashMap}} performs better than {{c1::HashMap}} in nearly all situations.	CleanCode	13	
+A {{c1::ReentrantLock}} is a lock that {{c2::can be acquired in one method and released in another}}.	CleanCode	13	
+A {{c1::Semaphore}} is a lock that {{c2::has a count}}.	CleanCode	13	
+A {{c1::CountDownLatch}} is a lock that {{c2::waits for a number of events before releasing all threads waiting on it.  This allows all threads to have a fair chance of starting at about the same time}}.	CleanCode	13	
+Execution Model definitions: {{c1::Bound Resources}} means {{c2::Resources of a fixed size or number used in a concurrent environment. Examples include database connections and fixed-size read/write buffers}}.	CleanCode	13	
+Execution Model definitions: {{c1::Mutual Exclusion}} means {{c2::Only one thread can access shared data or a shared resource at a time}}.	CleanCode	13	
+Execution Model definitions: {{c1::Starvation}} means {{c2::One thread or a group of threads is prohibited from proceeding for an excessively long time or forever. For example, always letting fast-running threads through first could starve out longer running threads if there is no end to the fast-running threads}}.	CleanCode	13	
+Execution Model definitions: {{c1::Deadlock}} means {{c2::Two or more threads waiting for each other to finish. Each thread has a resource that the other thread requires and neither can finish until it gets the other resource}}.	CleanCode	13	
+Execution Model definitions: {{c1::Livelock}} means {{c2::Threads in lockstep, each trying to do work but finding another "in the way."  Due to resonance, threads continue trying to make progress but are unable to for an excessively long time -- or forever}}.	CleanCode	13	
+Execution Model: {{c1::Producer-Consumer}} is {{c2::One or more producer threads create some work and place it in a buffer or queue. One or more consumer threads acquire that work from the queue and complete it}}.	CleanCode	13	
+In the {{c1::Producer-Consumer}} execution model, these topics occur: {{c2::bound resources, signalling}}.	CleanCode	13	
+Execution Model: {{c1::Readers-Writers}} is {{c2::The challenge is to balance the needs of (many) readers and (few) writers to satisfy correct operation, provide reasonable throughput, and avoid starvation}}.	CleanCode	13	
+In the {{c1::Readers-Writers}} execution model, these topics occur: {{c2::concurrent updates, starvation, throughput, stale information}}.	CleanCode	13	
+Execution Model: {{c1::Dining Philosophers}} is {{c2::Threads wait until they're hungry, at which point they grab resources and eat, releasing them when they're done}}.	CleanCode	13	
+In the {{c1::Dining Philosophers}} execution model, these topics occur: {{c2::deadlock, livelock, throughput}}.	CleanCode	13	
+If possible, avoid using {{c1::more than one method}} on an object shared by multiple threads, because {{c1::this introduces a dependency between the methods that can lead to maddening concurrency bugs}}.	CleanCode	13	
+If you must use more than one method on an object shared by multiple threads, the three ways to make the code correct are {{c1::Client-Based Locking, Server-Based Locking, and Adapted Server}}.	CleanCode	13	
+{{c1::Client-Based Locking}} is: {{c2::Have the client lock the server before calling the first method and make sure the lock's extent includes code calling the last method}}.	CleanCode	13	
+{{c1::Server-Based Locking}} is: {{c2::Within the server create a method that locks the server, calls all the methods, and then unlocks.  Have the client call the new method}}.	CleanCode	13	
+{{c1::Adapted Server Locking}} is: {{c2::create an intermediary that performs the locking.  Adapter atop Server-Based Locking}}.	CleanCode	13	
+Keep your synchronized sections {{c1::as small as possible}}.	CleanCode	13	
+Concurrent programming: think about {{c1::shutdown}} early and get it working early. This is probably harder than you think.	CleanCode	13	
+Concurrent programming: Treat spurious failures as {{c1::candidate threading issues}}.	CleanCode	13	
+Concurrent programming: Get your nonthreaded code working {{c1::first}}.	CleanCode	13	
+Concurrent programming: Make your threaded code {{c1::pluggable}} and {{c1::tunable}}.	CleanCode	13	
+Concurrent programming: Run with a number of threads {{c1::greater than the number of cores}}.	CleanCode	13	
+Concurrent programming: Run on {{c1::different platforms}}.	CleanCode	13	
+Concurrent programming: {{c1::instrument your code}} in order to force failures.	CleanCode	13	
+Pluggable threaded code: ensure you can {{c1::vary the number of threads}} as it executes.	CleanCode	13	
+Pluggable threaded code: have it interact with {{c1::something that can be both real or a test double}}.	CleanCode	13	
+Pluggable threaded code: execute with test doubles that {{c1::run quickly, slowly, variable}}.	CleanCode	13	
+Pluggable threaded code: configure tests so they can run {{c1::for a number of iterations}}.	CleanCode	13	
+Getting the right balance of threads typically requires {{c1::trial and error}}.	CleanCode	13	
+Concurrent programming: Find ways to {{c1::time}} the performance of your system under different configurations.	CleanCode	13	
+Tunable threaded code: Allow the number of threads to be {{c1::easily tuned}}, and consider allowing it to be {{c1::changed while the system is running}}, even {{c1::self-tuning based on throughput and system utilization}}.	CleanCode	13	
+Concurrent programming: do use {{c1::jiggling strategies}} to ferret out errors.	CleanCode	13	
+Concurrent programming: First and foremost, follow the {{c1::SRP}}.  Keep your thread-aware code {{c1::small and focused}}, separated from {{c1::thread-ignorant code}} in {{c1::POJOs}}.	CleanCode	13	
+Concurrent programming: Avoid calling {{c1::one locked section from another}}, because this requires {{c1::a deep understanding of whether something is or is not shared}} and thus {{c1::invites human error}}.	CleanCode	13	
+Concurrent programming: Keep the amount of shared objects and the scope of the sharing {{c1::as narrow as possible}}.	CleanCode	13	
+Concurrent programming: Try not to force client code {{c1::to manage shared state}}.	CleanCode	13	
