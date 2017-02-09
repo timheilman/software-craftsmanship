@@ -1,6 +1,6 @@
 Martin Fowler's take on Kent Beck's four rules of Simple Design is {{c1::1. runs all the tests. 2. reveals intention. 3. No duplication. 4. Fewest elements.}}	CleanCode	12	
 The most important way to be expressive is {{c1::to try}}. All too often we give insufficient thought to {{c1::making the code easy for the next person to read}}.	CleanCode	12	
 The majority of the cost of a software project is {{c1::in long-term maintenance}}.	CleanCode	12	
-In order to {{c1::minimize the potential for defects as we introduce change}}, it's critical for us to {{c2::be abe to understand what a system does}}.	CleanCode	12	
+In order to {{c1::minimize the potential for defects as we introduce change}}, it's critical for us to {{c2::be able to understand what a system does}}.	CleanCode	12	
 The clearer the author can make the code, the less {{c1::time others will have to spend understanding it}}.  This will {{c1::reduce defects}} and {{c1::shrink the cost of maintenance}}.	CleanCode	12	
 Although it's important to {{c1::keep class and function count low}}, it's more important to {{c2::have tests}}, {{c2::eliminate duplication}}, and {{c2::express yourself}}.	CleanCode	12	
