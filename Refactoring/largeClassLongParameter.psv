@@ -1,0 +1,7 @@
+Large Class|too many instance variables (perhaps not all of them being used all the time)|Extract Class (149) or Extract Subclass (330) (many times)
+Large Class|too much code|eliminate redundancy within the class itself; Extract Class (149) or Extract Subclass (330)
+Large Class|too much code; want ideas on how to further break-up the class|determine how clients use the class and use Extract Interface (341) for each of these uses
+Large Class|GUI class (or class with other asynchronously-updated data)|perhaps Duplicate Observed Data (189) in order to move data and behavior to a separate domain object
+Long Parameter List|A field or parameter this class already knows about can be asked for the data in one parameter|Replace Parameter with Method (292)
+Long Parameter List|Several data items gleanable from another object|Preserve Whole Object (288) OR rethink dependency structure if it dictates the dependency so introduced is in the improper direction, yet the pain of the list length is just too great
+Long Parameter List|Several data items with no logical object|Introduce Parameter Object (295) OR rethink dependency structure if it dictates the dependency so introduced is in the improper direction, yet the pain of the list length is just too great

@@ -1,0 +1,9 @@
+Beck/Fowler code smell: Divergent Change. Subsmells: {{c1::no subsmells}}	Refactoring	3	
+Beck/Fowler code smell: Divergent Change. Subsmell: {{c1::no subsmells}} Consider: {{c2::Extract Class (149) for everything that changes for a particular cause}}	Refactoring	3	
+Beck/Fowler code smell: Shotgun Surgery. Subsmells: {{c1::no subsmells}}	Refactoring	3	
+Beck/Fowler code smell: Shotgun Surgery. Subsmell: {{c1::no subsmells}} Consider: {{c2::Move Method (142) and Move Field (146) to put into one class all code changing for a common reason, creating a new class if necessary; perhaps Inline Class (154), then deal with any resulting Divergent Change}}	Refactoring	3	
+Beck/Fowler code smell: Feature Envy. Subsmells: {{c1::whole method fetches data from mostly one other class, allowances for Feature Envy, method fetches data from many other classes, part of method fetches data from mostly one other class}}	Refactoring	3	
+Beck/Fowler code smell: Feature Envy. Subsmell: {{c1::whole method fetches data from mostly one other class}} Consider: {{c2::Move Method (142)}}	Refactoring	3	
+Beck/Fowler code smell: Feature Envy. Subsmell: {{c1::allowances for Feature Envy}} Consider: {{c2::When data and behavior referencing that data DO NOT change together, move the behavior to keep the changes in one place}}	Refactoring	3	
+Beck/Fowler code smell: Feature Envy. Subsmell: {{c1::method fetches data from many other classes}} Consider: {{c2::Extract Method (110) to break the method into pieces, then Move Method (142) to the class with most of the data for that piece}}	Refactoring	3	
+Beck/Fowler code smell: Feature Envy. Subsmell: {{c1::part of method fetches data from mostly one other class}} Consider: {{c2::Extract Method (110) then Move Method (142)}}	Refactoring	3	

@@ -1,0 +1,6 @@
+Divergent Change|no subsmells|Extract Class (149) for everything that changes for a particular cause
+Shotgun Surgery|no subsmells|Move Method (142) and Move Field (146) to put into one class all code changing for a common reason, creating a new class if necessary; perhaps Inline Class (154), then deal with any resulting Divergent Change
+Feature Envy|whole method fetches data from mostly one other class|Move Method (142)
+Feature Envy|part of method fetches data from mostly one other class|Extract Method (110) then Move Method (142)
+Feature Envy|method fetches data from many other classes|Extract Method (110) to break the method into pieces, then Move Method (142) to the class with most of the data for that piece
+Feature Envy|allowances for Feature Envy|When data and behavior referencing that data DO NOT change together, move the behavior to keep the changes in one place
